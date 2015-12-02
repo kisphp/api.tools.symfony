@@ -7,6 +7,14 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+    <ul>
+        <li><a href="{{ path('api_homepage') }}">{{ 'Homepage' | trans }}</a></li>
+        <li><a href="{{ path('api_json2php', {to: 'php'}) }}">{{ 'Json 2 PHP' | trans }}</a></li>
+        <li><a href="{{ path('api_json2php', {to: 'xml'}) }}">{{ 'Json 2 XML' | trans }}</a></li>
+        <li><a href="{{ path('api_json2php', {to: 'serialize'}) }}">{{ 'Json 2 Serialize' | trans }}</a></li>
+    </ul>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

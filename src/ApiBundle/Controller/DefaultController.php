@@ -2,12 +2,23 @@
 
 namespace ApiBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @Template()
+ */
 class DefaultController extends Controller
 {
-    public function indexAction()
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function indexAction(Request $request)
     {
-        return $this->render('ApiBundle:Default:index.html.twig');
+        return [];
     }
 }

@@ -1,3 +1,9 @@
 api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
+
+api_json2php:
+    path: /json2{to}
+    defaults: { _controller: ApiBundle:Json:index }
+    requirements:
+        to: "php|xml|serialize"
