@@ -10,9 +10,19 @@
 
     <ul>
         <li><a href="{{ path('api_homepage') }}">{{ 'Homepage' | trans }}</a></li>
-        <li><a href="{{ path('api_json2php', {to: 'php'}) }}">{{ 'Json 2 PHP' | trans }}</a></li>
-        <li><a href="{{ path('api_json2php', {to: 'xml'}) }}">{{ 'Json 2 XML' | trans }}</a></li>
-        <li><a href="{{ path('api_json2php', {to: 'serialize'}) }}">{{ 'Json 2 Serialize' | trans }}</a></li>
+        <li>Json
+            <ul>
+                <li><a href="{{ path('api_json2php', {to: 'php'}) }}">{{ 'Json 2 PHP' | trans }}</a></li>
+                <li><a href="{{ path('api_json2php', {to: 'xml'}) }}">{{ 'Json 2 XML' | trans }}</a></li>
+                <li><a href="{{ path('api_json2php', {to: 'serialize'}) }}">{{ 'Json 2 Serialize' | trans }}</a></li>
+            </ul>
+        </li>
+        <li>Base64
+            <ul>
+                <li><a href="{{ path('api_base64', { to: 'encode' }) }}">{{ 'Encode' | trans }}</a></li>
+                <li><a href="{{ path('api_base64', { to: 'decode' }) }}">{{ 'Decode' | trans }}</a></li>
+            </ul>
+        </li>
     </ul>
 
         {% block body %}{% endblock %}

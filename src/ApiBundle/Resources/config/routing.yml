@@ -7,3 +7,9 @@ api_json2php:
     defaults: { _controller: ApiBundle:Json:index }
     requirements:
         to: "php|xml|serialize"
+
+api_base64:
+    path: /base64/{to}
+    defaults: { _controller: ApiBundle:Base64:index }
+    requirements:
+        to: "encode|decode"
