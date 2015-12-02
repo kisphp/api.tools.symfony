@@ -20,4 +20,24 @@ class JsonController extends ApiController
     {
         return [];
     }
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    protected function xmlAction(Request $request)
+    {
+        return [];
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    protected function serializeAction(Request $request)
+    {
+        return [];
+    }
 }
