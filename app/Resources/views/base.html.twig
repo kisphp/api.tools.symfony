@@ -23,6 +23,13 @@
                 <li><a href="{{ path('api_base64', { to: 'decode' }) }}">{{ 'Decode' | trans }}</a></li>
             </ul>
         </li>
+        <li>Serialized
+            <ul>
+                <li><a href="{{ path('api_serialized', { to: 'php' }) }}">{{ 'PHP' | trans }}</a></li>
+                <li><a href="{{ path('api_serialized', { to: 'xml' }) }}">{{ 'XML' | trans }}</a></li>
+                <li><a href="{{ path('api_serialized', { to: 'json' }) }}">{{ 'JSON' | trans }}</a></li>
+            </ul>
+        </li>
     </ul>
 
         {% block body %}{% endblock %}
