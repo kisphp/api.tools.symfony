@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ApiController extends Controller
 {
+    const ACTION = 'Action';
 
     /**
      * @param Request $request
@@ -20,9 +21,9 @@ class ApiController extends Controller
      */
     public function indexAction(Request $request, $to)
     {
-        $requiredAction = strtolower($to) . 'Action';
+        $requiredAction = strtolower($to) . self::ACTION;
 
-        if (method_exists($this, $requiredAction) && $requiredAction !== 'indexAction') {
+        if (method_exists($this, $requiredAction) && $requiredAction !== 'index' . self::ACTION) {
             return $this->$requiredAction($request);
         }
 

@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * @Template()
  */
-class SerializedController extends ApiController
+class SerializedController extends JsonController
 {
 
     /**
