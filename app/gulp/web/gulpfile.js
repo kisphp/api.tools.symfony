@@ -1,27 +1,39 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
-var plumber = require('gulp-plumber');
-//var rev = require('gulp-rev');
+var p = require('gulp-load-plugins')();
+
+var config = {
+    sourceDir: "app/gulp/web/",
+    targetDir: "web/"
+};
+
+gulp.task('images', function(){
+    gulp.src(config.sourceDir + 'images/**/*.*', { base: config.sourceDir + 'images/' })
+        .pipe(gulp.dest(config.targetDir + 'images/default/'));
+});
+
+gulp.task('fonts', function(){
+    gulp.src(config.sourceDir + 'fonts/**/*.*', { base: config.sourceDir + 'fonts/' })
+        .pipe(gulp.dest(config.targetDir + 'fonts/'));
+});
 
 gulp.task('scss', function(){
-    return gulp.src('web/SCSS/main.scss')
-        .pipe(plumber())
-        .pipe(sass())
-        .pipe(concat('main.css'))
-        .pipe(sourcemaps.write('.'))
-        //.pipe(rev())
-        .pipe(gulp.dest('web/css'))
-        //.pipe(rev.manifest('manifest.json', {
-        //    merge: true
-        //}))
-        //.pipe(gulp.dest('.'))
-    ;
+    return gulp.src(config.sourceDir + 'scss/index.scss')
+        .pipe(p.plumber())
+        .pipe(p.sass())
+        .pipe(p.concat('main.css'))
+        .pipe(gulp.dest(config.targetDir + 'css'));
+});
+
+gulp.task('js', function(){
+    return gulp.src(config.sourceDir + 'js/**/*.js')
+        .pipe(p.plumber())
+        .pipe(p.concat('main.js'))
+        .pipe(gulp.dest(config.targetDir + 'js'));
 });
 
 gulp.task('watch', function(){
-    gulp.watch('web/SCSS/**/*.scss', ['scss'])
+    gulp.watch(config.sourceDir + 'scss/**/*.scss', ['scss']);
+    gulp.watch(config.sourceDir + 'js/**/*.js', ['js']);
 });
 
-gulp.task('default', ['scss']);
+gulp.task('default', ['images', 'scss', 'js', 'fonts']);

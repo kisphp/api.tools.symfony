@@ -7,7 +7,7 @@
     "setup": "bower install",
     "postsetup": "cp .htaccess.bower web/bower/.htaccess",
     "web": "gulp --gulpfile app/gulp/web/gulpfile.js --cwd .",
-    "postinstall":"npm run setup && npm run web"
+    "postinstall": "npm run setup && npm run web"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0"

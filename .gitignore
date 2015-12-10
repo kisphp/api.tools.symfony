@@ -17,3 +17,5 @@
 .idea/
 node_modules/
 web/bower/
+web/js
+web/css/
