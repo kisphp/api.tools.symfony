@@ -25,8 +25,7 @@ class JsonController extends ApiController
      */
     protected function phpAction(Request $request)
     {
-        $form = $this->createForm(JsonForm::class);
-        $form->handleRequest($request);
+        $form = $this->createForm(JsonForm::class)->handleRequest($request);
 
         $result = new ResultTransfer();
         if ($form->isValid()) {
