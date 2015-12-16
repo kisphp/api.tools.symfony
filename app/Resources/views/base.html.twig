@@ -5,9 +5,87 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bower/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+                        <span class="sr-only">{{ 'Toggle navigation' | trans }}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('api_homepage') }}">API</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="main-navigation">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('api_homepage') }}">{{ 'Homepage' | trans }}</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Json' | trans }} <span class="caret"></span></a></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('api_json2php', {to: 'php'}) }}">{{ 'Json 2 PHP' | trans }}</a></li>
+                                <li><a href="{{ path('api_json2php', {to: 'xml'}) }}">{{ 'Json 2 XML' | trans }}</a></li>
+                                <li><a href="{{ path('api_json2php', {to: 'serialize'}) }}">{{ 'Json 2 Serialize' | trans }}</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Base64' | trans }} <span class="caret"></span></a></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('api_base64', { to: 'encode' }) }}">{{ 'Encode' | trans }}</a></li>
+                                <li><a href="{{ path('api_base64', { to: 'decode' }) }}">{{ 'Decode' | trans }}</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Serialized' | trans }} <span class="caret"></span></a></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('api_serialized', { to: 'php' }) }}">{{ 'PHP' | trans }}</a></li>
+                                <li><a href="{{ path('api_serialized', { to: 'xml' }) }}">{{ 'XML' | trans }}</a></li>
+                                <li><a href="{{ path('api_serialized', { to: 'json' }) }}">{{ 'JSON' | trans }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    {#
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    #}
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        {% block javascripts %}
+            <script src="{{ asset('bower/jquery/dist/jquery.js') }}"></script>
+            <script src="{{ asset('bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('/js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
