@@ -14,7 +14,7 @@ class JsonManager implements ManagerInterface
     /**
      * @param ApiFormTransfer $formTransfer
      *
-     * @return array
+     * @return self
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
