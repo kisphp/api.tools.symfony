@@ -14,3 +14,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+.idea/
+node_modules/
+web/bower/
+web/js/
