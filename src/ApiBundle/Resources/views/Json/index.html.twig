@@ -5,9 +5,11 @@
     {{ form_start(form) }}
         {{ form_widget(form) }}
 
-        <input type="submit" class="btn btn-primary" value="{{ 'Save' | trans }}" />
+        <input type="submit" class="btn btn-primary" value="{{ 'Convert' | trans }}" />
     {{ form_end(form) }}
 
+    {% if result is defined and result is not empty %}
     <textarea name="" id="" cols="120" rows="10" class="response">{{ result | raw }}</textarea>
+    {% endif %}
 
 {% endblock %}
