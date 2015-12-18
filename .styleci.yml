@@ -4,6 +4,7 @@ linting: true
 
 disabled:
     - concat_without_spaces
+    - no_blank_lines_after_class_opening
 
 finder:
   path: src
