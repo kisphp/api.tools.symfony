@@ -1,0 +1,6 @@
+preset: symfony
+
+linting: true
+
+finder:
+  path: src
