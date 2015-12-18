@@ -2,5 +2,8 @@ preset: symfony
 
 linting: true
 
+disabled:
+    - concat_without_spaces
+
 finder:
   path: src
