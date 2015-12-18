@@ -4,7 +4,6 @@ namespace ApiBundle\Controller;
 
 use ApiBundle\Form\JsonForm;
 use ApiBundle\Manager\JsonManager;
-use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
 use ApiBundle\Transformer\PhpTransformer;
 use ApiBundle\Transformer\XmlTransformer;
@@ -17,7 +16,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class JsonController extends ApiController
 {
-
     /**
      * @param Request $request
      *
