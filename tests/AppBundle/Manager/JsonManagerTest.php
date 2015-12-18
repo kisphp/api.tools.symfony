@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
 class JsonManagerTest extends TestCase
 {
-
     public function testJsonToArray()
     {
         $formData = new ApiFormTransfer();
@@ -16,5 +15,14 @@ class JsonManagerTest extends TestCase
 
         $jsonManager = new JsonManager();
         $this->assertSame(['a' => 'AA'], $jsonManager->transform($formData)->getData());
+    }
+
+    public function testInvalidJsonToArray()
+    {
+        $formData = new ApiFormTransfer();
+        $formData->setContent('{"a"}');
+
+        $jsonManager = new JsonManager();
+        $this->assertNull($jsonManager->transform($formData)->getData());
     }
 }
