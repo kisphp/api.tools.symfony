@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Tests\Manager;
+namespace Test\AppBundle\Manager;
 
 use ApiBundle\Manager\JsonManager;
 use ApiBundle\Transfer\ApiFormTransfer;

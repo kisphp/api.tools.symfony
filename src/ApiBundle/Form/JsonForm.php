@@ -21,7 +21,11 @@ class JsonForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(self::FIELD_CONTENT, TextareaType::class)
+            ->add(self::FIELD_CONTENT, TextareaType::class, [
+                'attr' => [
+                    'rows' => 7,
+                ],
+            ])
         ;
     }
 
@@ -33,6 +37,9 @@ class JsonForm extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'attr' => [
+                'class' => 'form-horizontal',
+            ],
             'data_class' => ApiFormTransfer::class,
         ]);
     }
