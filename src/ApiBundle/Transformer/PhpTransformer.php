@@ -6,7 +6,6 @@ use ApiBundle\Manager\ManagerInterface;
 
 class PhpTransformer
 {
-
     /**
      * @param ManagerInterface $manager
      *

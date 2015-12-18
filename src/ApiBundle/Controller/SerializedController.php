@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class SerializedController extends JsonController
 {
-
     /**
      * @param Request $request
      *

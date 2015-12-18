@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class DefaultController extends Controller
 {
-
     /**
      * @param Request $request
      *

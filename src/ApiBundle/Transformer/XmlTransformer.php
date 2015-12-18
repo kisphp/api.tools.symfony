@@ -6,7 +6,6 @@ use ApiBundle\Manager\ManagerInterface;
 
 class XmlTransformer
 {
-
     /**
      * @param ManagerInterface $manager
      *

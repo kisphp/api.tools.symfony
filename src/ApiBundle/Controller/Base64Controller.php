@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class Base64Controller extends ApiController
 {
-
     /**
      * @param Request $request
      *

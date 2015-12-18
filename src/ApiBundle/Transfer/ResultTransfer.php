@@ -4,7 +4,6 @@ namespace ApiBundle\Transfer;
 
 class ResultTransfer
 {
-
     /**
      * @var string
      */
@@ -25,5 +24,4 @@ class ResultTransfer
     {
         $this->result = $result;
     }
-
 }

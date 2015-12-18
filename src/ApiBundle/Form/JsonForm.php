@@ -10,7 +10,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class JsonForm extends AbstractType
 {
-
     const FIELD_CONTENT = 'content';
 
     /**
@@ -34,7 +33,7 @@ class JsonForm extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => ApiFormTransfer::class
+            'data_class' => ApiFormTransfer::class,
         ]);
     }
 

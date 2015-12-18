@@ -4,7 +4,6 @@ namespace ApiBundle\Transfer;
 
 class ApiFormTransfer
 {
-
     /**
      * @var string
      */
@@ -25,5 +24,4 @@ class ApiFormTransfer
     {
         $this->content = $content;
     }
-
 }

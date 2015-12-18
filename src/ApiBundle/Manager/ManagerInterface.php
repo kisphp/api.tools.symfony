@@ -6,7 +6,6 @@ use ApiBundle\Transfer\ApiFormTransfer;
 
 interface ManagerInterface
 {
-
     /**
      * @param ApiFormTransfer $formTransfer
      *
