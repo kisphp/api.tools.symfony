@@ -13,3 +13,7 @@ api_base64_convert:
 api_serialized_convert:
     path: /convert/serialized
     defaults: { _controller: ApiBundle:Convert:serialized }
+
+api_responsive:
+    path: /responsive
+    defaults: { _controller: ApiBundle:Responsive:index }

@@ -5,14 +5,15 @@ namespace ApiBundle\Form;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Base64Form extends AbstractType
+class ResponsiveForm extends AbstractType
 {
-    const VALUE_ENCODE_64 = 'Encode64';
-    const VALUE_DECODE_64 = 'Decode64';
+    const VALUE_PHP = 'Php';
+    const VALUE_XML = 'Xml';
+    const VALUE_SERIALIZED = 'Serialized';
 
     /**
      * @param FormBuilderInterface $builder
@@ -23,19 +24,24 @@ class Base64Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(ApiFormTransfer::FIELD_SOURCE, TextareaType::class, [
-                'attr' => [
-                    'rows' => 7,
-                ],
+            ->add(ApiFormTransfer::FIELD_SOURCE, TextType::class, [
+                'label' => 'Url',
             ])
             ->add(ApiFormTransfer::FIELD_TYPE, ChoiceType::class, [
                 'expanded' => true,
+                'multiple' => true,
                 'attr' => [
                     'class' => 'form-inline',
                 ],
                 'choices' => [
-                    'Encode' => self::VALUE_ENCODE_64,
-                    'Decode' => self::VALUE_DECODE_64,
+                    '320x568' => '320x568',
+                    '320x534' => '320x534',
+                    '320x480' => '320x480',
+                    '360x640' => '360x640',
+                    '375x667' => '375x667',
+                    '480x800' => '480x800',
+                    '768x1024' => '768x1024',
+                    '1280x800' => '1280x800',
                 ],
             ])
         ;
@@ -61,6 +67,6 @@ class Base64Form extends AbstractType
      */
     public function getName()
     {
-        return 'base64';
+        return 'responsive';
     }
 }

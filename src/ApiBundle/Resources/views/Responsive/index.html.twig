@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+
+<form action="" method="post">
+    <div class="span2">URL:</div>
+    <div class="span10">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Add url to view in multiple resolutions" name="url" value="{{ request }}">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">View!</button>
+                  </span>
+        </div><!-- /input-group -->
+    </div>
+    <div class="desp-10"></div>
+    <div>
+        {% for dim in dimensions %}
+            {% set dim_key = dim[0]~'x'~dim[1] %}
+            <label><input class="dim-select" type="checkbox"{% if selected_dimensions[dim_key] is defined or not is_post %} checked="checked"{% endif %} value="1" name="dim[{{ dim[0] }}x{{ dim[1] }}]" /> {{ dim[0] }}x{{ dim[1] }}</label>
+        {% endfor %}
+        <button class="btn btn-sm btn-primary inverse-select" type="button">Inverse select</button>
+    </div>
+    <div class="clearfix"></div>
+    <div class="desp-20"></div>
+</form>
+</div>
+
+{% if request|length > 0 %}
+    {% for dim in dimensions %}
+        {% set dim_key = dim[0]~'x'~dim[1] %}
+        {% if selected_dimensions[dim_key] == 1 %}
+            <div style="width: {{ dim[0] }}px; height: {{ dim[1] + 25 + 2 }}px; border: 1px solid #ccc; margin: 5px;" class="pull-left">
+                <div class="iframe-topic" style="width: {{ dim[0] }}px;">{{ dim[0] }}x{{ dim[1] }} ({%- if dim[2] is defined and dim[2] != '' -%}
+                    {{ dim[2] }}
+                {%- else -%}
+                    {% if dim[0] > dim[1] %}Landscape{% else %}Portrait{% endif %}
+                    {%- endif -%})
+                    <a href="javascript:void(0)" class="pull-right refresh-iframe" id="a{{ loop.index }}">Reload</a>
+                </div>
+                <iframe src="{{ request }}" id="iframe-a{{ loop.index }}" frameborder="0" style="width: {{ dim[0] }}px; height: {{ dim[1] }}px;"></iframe>
+            </div>
+            <div style="width: {{ dim[1] }}px; height: {{ max(568, dim[0] + 25 + 2) }}px; border: 1px solid #ccc; margin: 5px;" class="pull-left">
+                <div class="iframe-topic" style="width: {{ dim[1] }}px;">{{ dim[1] }}x{{ dim[0] }} ({%- if dim[2] is defined and dim[2] != '' -%}
+                    {{ dim[2] }}
+                {%- else -%}
+                    {% if dim[0] < dim[1] %}Landscape{% else %}Portrait{% endif %}
+                    {%- endif -%})
+                    <a href="javascript:void(0)" class="pull-right refresh-iframe" id="b{{ loop.index }}">Reload</a>
+                </div>
+                <iframe src="{{ request }}" id="iframe-b{{ loop.index }}" frameborder="0" style="width: {{ dim[1] }}px; height: {{ max(568, dim[0] + 25 + 2) }}px;"></iframe>
+            </div>
+            <div class="clearfix"></div>
+            <hr/>
+        {% endif %}
+    {% endfor %}
+    <div class="clearfix"></div>
+{% endif %}
+<div class="container">
+
+{% endblock %}

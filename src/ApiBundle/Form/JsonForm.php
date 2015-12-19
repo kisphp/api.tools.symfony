@@ -63,6 +63,6 @@ class JsonForm extends AbstractType
      */
     public function getName()
     {
-        return 'json_form';
+        return 'json';
     }
 }

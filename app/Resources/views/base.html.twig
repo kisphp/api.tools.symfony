@@ -36,6 +36,9 @@
                         <li>
                             <a href="{{ path('api_serialized_convert') }}">{{ 'Serialized' | trans }}</a>
                         </li>
+                        <li>
+                            <a href="{{ path('api_responsive') }}">{{ 'Responsive' }}</a>
+                        </li>
                     </ul>
 
                     {#
@@ -63,10 +66,11 @@
             </div>
         </nav>
 
-
+        {% block container %}
         <div class="container">
             {% block body %}{% endblock %}
         </div>
+        {% endblock %}
 
         {% block javascripts %}
             <script src="{{ asset('bower/jquery/dist/jquery.js') }}"></script>
