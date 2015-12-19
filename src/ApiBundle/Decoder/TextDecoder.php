@@ -4,7 +4,7 @@ namespace ApiBundle\Decoder;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 
-class Base64Decoder implements DecoderInterface
+class TextDecoder implements DecoderInterface
 {
     /**
      * @var array
@@ -18,7 +18,7 @@ class Base64Decoder implements DecoderInterface
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
-        $this->data = base64_decode($formTransfer->getSource());
+        $this->data = $formTransfer->getSource();
 
         return $this;
     }

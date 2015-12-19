@@ -28,10 +28,14 @@ class ApiFormTransfer
 
     /**
      * @param string $source
+     *
+     * @return $this
      */
     public function setSource($source)
     {
         $this->source = $source;
+
+        return $this;
     }
 
     /**
@@ -44,9 +48,13 @@ class ApiFormTransfer
 
     /**
      * @param string $type
+     *
+     * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
     }
 }

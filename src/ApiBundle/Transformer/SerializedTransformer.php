@@ -7,12 +7,12 @@ use ApiBundle\Decoder\DecoderInterface;
 class SerializedTransformer
 {
     /**
-     * @param DecoderInterface $manager
+     * @param DecoderInterface $decoder
      *
      * @return string
      */
-    public function transform(DecoderInterface $manager)
+    public function transform(DecoderInterface $decoder)
     {
-        return serialize($manager->getData());
+        return serialize($decoder->getData());
     }
 }

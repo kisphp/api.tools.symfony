@@ -7,15 +7,15 @@ use ApiBundle\Decoder\DecoderInterface;
 class XmlTransformer
 {
     /**
-     * @param DecoderInterface $manager
+     * @param DecoderInterface $decoder
      *
      * @return string
      */
-    public function transform(DecoderInterface $manager)
+    public function transform(DecoderInterface $decoder)
     {
         $xml = new \SimpleXMLElement('<xml/>');
 
-        foreach ($manager->getData() as $key => $value) {
+        foreach ($decoder->getData() as $key => $value) {
             if (is_array($value)) {
                 if (is_numeric($key)) {
                     $items = $xml->addChild('items');

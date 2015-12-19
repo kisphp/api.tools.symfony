@@ -2,10 +2,12 @@
 
 namespace ApiBundle\Controller;
 
+use ApiBundle\Form\Base64Form;
 use ApiBundle\Form\JsonForm;
-use ApiBundle\Decoder\Base64Decoder;
+use ApiBundle\Decoder\TextDecoder;
 use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Decoder\SerializedDecoder;
+use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
 use ApiBundle\Transformer\FactoryTransformer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,7 +22,8 @@ class ConvertController extends Controller
      */
     public function jsonAction(Request $request)
     {
-        $form = $this->createForm(JsonForm::class)->handleRequest($request);
+        $formDefault = (new ApiFormTransfer())->setType(JsonForm::VALUE_PHP);
+        $form = $this->createForm(JsonForm::class, $formDefault)->handleRequest($request);
         $result = new ResultTransfer();
 
         if ($form->isValid()) {
@@ -40,11 +43,12 @@ class ConvertController extends Controller
 
     public function base64Action(Request $request)
     {
-        $form = $this->createForm(JsonForm::class)->handleRequest($request);
+        $formDefault = (new ApiFormTransfer())->setType(Base64Form::VALUE_ENCODE_64);
+        $form = $this->createForm(Base64Form::class, $formDefault)->handleRequest($request);
         $result = new ResultTransfer();
 
         if ($form->isValid()) {
-            $manager = new Base64Decoder();
+            $manager = new TextDecoder();
             $manager->transform($form->getData());
 
             $response = FactoryTransformer::createResponse($form->getData(), $manager);
@@ -60,7 +64,8 @@ class ConvertController extends Controller
 
     public function serializedAction(Request $request)
     {
-        $form = $this->createForm(JsonForm::class)->handleRequest($request);
+        $formDefault = (new ApiFormTransfer())->setType(JsonForm::VALUE_PHP);
+        $form = $this->createForm(JsonForm::class, $formDefault)->handleRequest($request);
         $result = new ResultTransfer();
 
         if ($form->isValid()) {

@@ -9,11 +9,11 @@ abstract class FactoryTransformer
 {
     /**
      * @param ApiFormTransfer $formData
-     * @param DecoderInterface $manager
+     * @param DecoderInterface $decoder
      *
      * @return string
      */
-    public static function createResponse(ApiFormTransfer $formData, DecoderInterface $manager)
+    public static function createResponse(ApiFormTransfer $formData, DecoderInterface $decoder)
     {
         $transformerName = '\\ApiBundle\\Transformer\\' . $formData->getType() . 'Transformer';
 
@@ -21,9 +21,9 @@ abstract class FactoryTransformer
             /** @var TransformerInterface $transformer */
             $transformer = new $transformerName();
 
-            return $transformer->transform($manager);
+            return $transformer->transform($decoder);
         }
 
-        return 'Transformer not implemented';
+        return sprintf('Transformer %s not implemented', $transformerName);
     }
 }

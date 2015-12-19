@@ -6,5 +6,5 @@ use ApiBundle\Decoder\DecoderInterface;
 
 interface TransformerInterface
 {
-    public function transform(DecoderInterface $manager);
+    public function transform(DecoderInterface $decoder);
 }
