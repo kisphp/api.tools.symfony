@@ -2,18 +2,19 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Manager\ManagerInterface;
+
+use ApiBundle\Decoder\DecoderInterface;
 use ApiBundle\Transfer\ApiFormTransfer;
 
 abstract class FactoryTransformer
 {
     /**
      * @param ApiFormTransfer $formData
-     * @param ManagerInterface $manager
+     * @param DecoderInterface $manager
      *
      * @return string
      */
-    public static function createResponse(ApiFormTransfer $formData, ManagerInterface $manager)
+    public static function createResponse(ApiFormTransfer $formData, DecoderInterface $manager)
     {
         $transformerName = '\\ApiBundle\\Transformer\\' . $formData->getType() . 'Transformer';
 

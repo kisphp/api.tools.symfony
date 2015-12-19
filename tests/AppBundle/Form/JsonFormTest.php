@@ -16,7 +16,6 @@ class JsonFormTest extends TypeTestCase
 
         $form = $this->factory->create(JsonForm::class);
 
-        // submit the data to the form directly
         $form->submit($formData);
 
         $this->assertTrue($form->isSynchronized());

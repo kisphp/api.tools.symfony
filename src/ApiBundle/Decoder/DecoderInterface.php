@@ -1,10 +1,10 @@
 <?php
 
-namespace ApiBundle\Manager;
+namespace ApiBundle\Decoder;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 
-interface ManagerInterface
+interface DecoderInterface
 {
     /**
      * @param ApiFormTransfer $formTransfer

@@ -1,19 +1,19 @@
 <?php
 
-namespace Test\AppBundle\Manager;
+namespace Test\AppBundle\Decoder;
 
-use ApiBundle\Manager\JsonManager;
+use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
-class JsonManagerTest extends TestCase
+class JsonDecoderTest extends TestCase
 {
     public function testJsonToArray()
     {
         $formData = new ApiFormTransfer();
         $formData->setSource('{"a": "AA"}');
 
-        $jsonManager = new JsonManager();
+        $jsonManager = new JsonDecoder();
         $this->assertSame(['a' => 'AA'], $jsonManager->transform($formData)->getData());
     }
 
@@ -22,7 +22,7 @@ class JsonManagerTest extends TestCase
         $formData = new ApiFormTransfer();
         $formData->setSource('{"a"}');
 
-        $jsonManager = new JsonManager();
+        $jsonManager = new JsonDecoder();
         $this->assertNull($jsonManager->transform($formData)->getData());
     }
 }

@@ -2,16 +2,16 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Manager\ManagerInterface;
+use ApiBundle\Decoder\DecoderInterface;
 
 class SerializedTransformer
 {
     /**
-     * @param ManagerInterface $manager
+     * @param DecoderInterface $manager
      *
      * @return string
      */
-    public function transform(ManagerInterface $manager)
+    public function transform(DecoderInterface $manager)
     {
         return serialize($manager->getData());
     }
