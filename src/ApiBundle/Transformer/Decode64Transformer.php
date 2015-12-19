@@ -4,7 +4,7 @@ namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
 
-class PhpTransformer
+class Decode64Transformer
 {
     /**
      * @param DecoderInterface $decoder
@@ -13,6 +13,6 @@ class PhpTransformer
      */
     public function transform(DecoderInterface $decoder)
     {
-        return print_r($decoder->getData(), true);
+        return base64_decode($decoder->getData());
     }
 }

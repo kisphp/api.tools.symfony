@@ -2,21 +2,20 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Manager\ManagerInterface;
+use ApiBundle\Decoder\DecoderInterface;
 
 class XmlTransformer
 {
-
     /**
-     * @param ManagerInterface $manager
+     * @param DecoderInterface $decoder
      *
      * @return string
      */
-    public function transform(ManagerInterface $manager)
+    public function transform(DecoderInterface $decoder)
     {
         $xml = new \SimpleXMLElement('<xml/>');
 
-        foreach ($manager->getData() as $key => $value) {
+        foreach ($decoder->getData() as $key => $value) {
             if (is_array($value)) {
                 if (is_numeric($key)) {
                     $items = $xml->addChild('items');

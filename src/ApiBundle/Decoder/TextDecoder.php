@@ -1,10 +1,10 @@
 <?php
 
-namespace ApiBundle\Manager;
+namespace ApiBundle\Decoder;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 
-class JsonManager implements ManagerInterface
+class TextDecoder implements DecoderInterface
 {
     /**
      * @var array
@@ -14,11 +14,11 @@ class JsonManager implements ManagerInterface
     /**
      * @param ApiFormTransfer $formTransfer
      *
-     * @return array
+     * @return self
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
-        $this->data = json_decode($formTransfer->getContent(), true);
+        $this->data = $formTransfer->getSource();
 
         return $this;
     }
