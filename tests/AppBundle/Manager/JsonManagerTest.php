@@ -11,7 +11,7 @@ class JsonManagerTest extends TestCase
     public function testJsonToArray()
     {
         $formData = new ApiFormTransfer();
-        $formData->setContent('{"a": "AA"}');
+        $formData->setSource('{"a": "AA"}');
 
         $jsonManager = new JsonManager();
         $this->assertSame(['a' => 'AA'], $jsonManager->transform($formData)->getData());
@@ -20,7 +20,7 @@ class JsonManagerTest extends TestCase
     public function testInvalidJsonToArray()
     {
         $formData = new ApiFormTransfer();
-        $formData->setContent('{"a"}');
+        $formData->setSource('{"a"}');
 
         $jsonManager = new JsonManager();
         $this->assertNull($jsonManager->transform($formData)->getData());

@@ -11,7 +11,7 @@ class JsonFormTest extends TypeTestCase
     public function testSubmitValidData()
     {
         $formData = array(
-            'content' => '{"a":"AA"}',
+            ApiFormTransfer::FIELD_SOURCE => '{"a":"AA"}',
         );
 
         $form = $this->factory->create(JsonForm::class);
