@@ -2,7 +2,6 @@
 
 namespace ApiBundle\Transformer;
 
-
 use ApiBundle\Decoder\DecoderInterface;
 use ApiBundle\Transfer\ApiFormTransfer;
 
