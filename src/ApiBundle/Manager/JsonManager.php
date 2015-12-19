@@ -18,7 +18,7 @@ class JsonManager implements ManagerInterface
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
-        $this->data = json_decode($formTransfer->getContent(), true);
+        $this->data = json_decode($formTransfer->getSource(), true);
 
         return $this;
     }

@@ -4,14 +4,13 @@ namespace ApiBundle\Form;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class JsonForm extends AbstractType
 {
-    const FIELD_CONTENT = 'content';
-
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -21,9 +20,20 @@ class JsonForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(self::FIELD_CONTENT, TextareaType::class, [
+            ->add(ApiFormTransfer::FIELD_SOURCE, TextareaType::class, [
                 'attr' => [
                     'rows' => 7,
+                ],
+            ])
+            ->add(ApiFormTransfer::FIELD_TYPE, ChoiceType::class, [
+                'expanded' => true,
+                'attr' => [
+                    'class' => 'form-inline',
+                ],
+                'choices' => [
+                    'PHP' => 'Php',
+                    'XML' => 'Xml',
+                    'Serialized' => 'Serialized',
                 ],
             ])
         ;

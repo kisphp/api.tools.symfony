@@ -28,22 +28,17 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ path('api_homepage') }}">{{ 'Homepage' | trans }}</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Json' | trans }} <span class="caret"></span></a></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ path('api_json2php', {to: 'php'}) }}">{{ 'Json 2 PHP' | trans }}</a></li>
-                                <li><a href="{{ path('api_json2php', {to: 'xml'}) }}">{{ 'Json 2 XML' | trans }}</a></li>
-                                <li><a href="{{ path('api_json2php', {to: 'serialize'}) }}">{{ 'Json 2 Serialize' | trans }}</a></li>
-                            </ul>
+                            <a href="{{ path('api_json_convert') }}">{{ 'Json' | trans }}</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Base64' | trans }} <span class="caret"></span></a></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Base64' | trans }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ path('api_base64', { to: 'encode' }) }}">{{ 'Encode' | trans }}</a></li>
                                 <li><a href="{{ path('api_base64', { to: 'decode' }) }}">{{ 'Decode' | trans }}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Serialized' | trans }} <span class="caret"></span></a></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'Serialized' | trans }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ path('api_serialized', { to: 'php' }) }}">{{ 'PHP' | trans }}</a></li>
                                 <li><a href="{{ path('api_serialized', { to: 'xml' }) }}">{{ 'XML' | trans }}</a></li>
