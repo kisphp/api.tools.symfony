@@ -13,5 +13,5 @@ abstract class ApiController extends Controller
      *
      * @return mixed
      */
-    public abstract function indexAction(Request $request, $to);
+    abstract public function indexAction(Request $request, $to);
 }
