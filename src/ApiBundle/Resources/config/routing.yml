@@ -2,20 +2,14 @@ api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
 
-api_json2php:
-    path: /json/{to}
-    defaults: { _controller: ApiBundle:Json:index }
-    requirements:
-        to: "php|xml|serialize"
+api_json_convert:
+    path: /convert/json
+    defaults: { _controller: ApiBundle:Convert:json }
 
-api_base64:
-    path: /base64/{to}
-    defaults: { _controller: ApiBundle:Base64:index }
-    requirements:
-        to: "encode|decode"
+api_base64_convert:
+    path: /convert/base64
+    defaults: { _controller: ApiBundle:Convert:base64 }
 
-api_serialized:
-    path: /serialized/{to}
-    defaults: { _controller: ApiBundle:Serialized:index }
-    requirements:
-        to: "php|xml|json"
+api_serialized_convert:
+    path: /convert/serialized
+    defaults: { _controller: ApiBundle:Convert:serialized }

@@ -4,24 +4,57 @@ namespace ApiBundle\Transfer;
 
 class ApiFormTransfer
 {
+    const FIELD_SOURCE = 'source';
+
+    const FIELD_TYPE = 'type';
+
     /**
      * @var string
      */
-    protected $content;
+    protected $source;
+
+    /**
+     * @var string
+     */
+    protected $type;
 
     /**
      * @return string
      */
-    public function getContent()
+    public function getSource()
     {
-        return $this->content;
+        return $this->source;
     }
 
     /**
-     * @param string $content
+     * @param string $source
+     *
+     * @return $this
      */
-    public function setContent($content)
+    public function setSource($source)
     {
-        $this->content = $content;
+        $this->source = $source;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }

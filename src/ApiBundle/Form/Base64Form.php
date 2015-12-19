@@ -9,11 +9,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class JsonForm extends AbstractType
+class Base64Form extends AbstractType
 {
-    const VALUE_PHP = 'Php';
-    const VALUE_XML = 'Xml';
-    const VALUE_SERIALIZED = 'Serialized';
+    const VALUE_ENCODE_64 = 'Encode64';
+    const VALUE_DECODE_64 = 'Decode64';
 
     /**
      * @param FormBuilderInterface $builder
@@ -35,9 +34,8 @@ class JsonForm extends AbstractType
                     'class' => 'form-inline',
                 ],
                 'choices' => [
-                    'PHP' => self::VALUE_PHP,
-                    'XML' => self::VALUE_XML,
-                    'Serialized' => self::VALUE_SERIALIZED,
+                    'Encode' => self::VALUE_ENCODE_64,
+                    'Decode' => self::VALUE_DECODE_64,
                 ],
             ])
         ;

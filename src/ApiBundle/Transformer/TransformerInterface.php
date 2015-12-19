@@ -2,9 +2,9 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Manager\ManagerInterface;
+use ApiBundle\Decoder\DecoderInterface;
 
 interface TransformerInterface
 {
-    public function transform(ManagerInterface $manager);
+    public function transform(DecoderInterface $decoder);
 }
