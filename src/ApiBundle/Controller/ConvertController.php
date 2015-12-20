@@ -38,6 +38,7 @@ class ConvertController extends Controller
         return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
+            'page_title' => 'Json',
         ]);
     }
 
@@ -59,6 +60,7 @@ class ConvertController extends Controller
         return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
+            'page_title' => 'Base 64',
         ]);
     }
 
@@ -80,6 +82,7 @@ class ConvertController extends Controller
         return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
+            'page_title' => 'Serialized',
         ]);
     }
 }

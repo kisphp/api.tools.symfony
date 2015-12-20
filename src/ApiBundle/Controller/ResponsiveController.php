@@ -38,6 +38,7 @@ class ResponsiveController extends Controller
                 if ($dimensions[0] > 600 || $dimensions[1] > 600) {
                     $isLarge = true;
                 }
+
                 return $dimensions;
             }, $response->getType());
         }

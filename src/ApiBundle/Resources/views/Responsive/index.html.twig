@@ -42,6 +42,10 @@
 
 {% import _self as box %}
 
+{% block title %}
+    {{ 'Responsive test' | trans }}
+{% endblock %}
+
 {% block response %}
     {% if is_large %}{{ '</div>' }}{% endif %}
     {% for dim in dimensions %}
