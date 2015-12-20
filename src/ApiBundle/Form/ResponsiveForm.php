@@ -33,18 +33,34 @@ class ResponsiveForm extends AbstractType
                 'attr' => [
                     'class' => 'form-inline',
                 ],
-                'choices' => [
-                    '320x568' => '320x568',
-                    '320x534' => '320x534',
-                    '320x480' => '320x480',
-                    '360x640' => '360x640',
-                    '375x667' => '375x667',
-                    '480x800' => '480x800',
-                    '768x1024' => '768x1024',
-                    '1280x800' => '1280x800',
-                ],
+                'choices' => $this->getKeyValueOptions(),
             ])
         ;
+    }
+
+    /**
+     * @return array
+     */
+    public function getKeyValueOptions()
+    {
+        return array_combine(self::getResolutionChoirces(), self::getResolutionChoirces());
+    }
+
+    /**
+     * @return array
+     */
+    public static function getResolutionChoirces()
+    {
+        return [
+            '320x568',
+            '320x534',
+            '320x480',
+            '360x640',
+            '375x667',
+            '480x800',
+            '768x1024',
+            '1280x800',
+        ];
     }
 
     /**

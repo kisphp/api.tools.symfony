@@ -35,7 +35,7 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('ApiBundle:Convert:form.html.twig', [
+        return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
         ]);
@@ -56,7 +56,7 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('ApiBundle:Convert:form.html.twig', [
+        return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
         ]);
@@ -77,7 +77,7 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('ApiBundle:Convert:form.html.twig', [
+        return $this->render('::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
         ]);

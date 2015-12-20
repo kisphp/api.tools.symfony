@@ -1,7 +1,57 @@
-{% extends '::base.html.twig' %}
+{% extends '::form.html.twig' %}
 
-{% block container %}
+{% macro write_iframe(width, height, url, loop) %}
+    <iframe src="{{ url }}" id="iframe-a{{ loop.index }}" frameborder="0" style="width: {{ width }}px; height: {{ height }}px;"></iframe>
+    {#<iframe src="{{ url }}" id="iframe-b{{ loop.index }}" frameborder="0" style="width: {{ dim[1] }}px; height: {{ max(568, dim[0] + 25 + 2) }}px;"></iframe>#}
+{% endmacro %}
 
+{% macro iframe_box(dim, url, loop) %}
+    {% import _self as box %}
+    {% set dim_key = dim[0]~'x'~dim[1] %}
+    <div style="width: {{ dim[0] }}px; height: {{ dim[1] + 25 + 2 }}px; border: 1px solid #ccc; margin: 5px;" class="pull-left">
+        <div class="iframe-topic" style="width: {{ dim[0] }}px;">{{ dim[0] }}x{{ dim[1] }} ({%- if dim[2] is defined and dim[2] != '' -%}
+            {{ dim[2] }}
+        {%- else -%}
+            {% if dim[0] > dim[1] %}
+                {{ 'Landscape' | trans }}
+            {% else %}
+                {{ 'Portrait' | trans }}
+            {% endif %}
+        {%- endif -%})
+            <a href="#" class="pull-right refresh-iframe" id="a{{ loop.index }}">{{ 'Reload' | trans }}</a>
+        </div>
+        {{ box.write_iframe(dim[0], dim[1], url, loop) }}
+    </div>
+    <div style="width: {{ dim[1] }}px; height: {{ max(568, dim[0] + 25 + 2) }}px; border: 1px solid #ccc; margin: 5px;" class="pull-left">
+        <div class="iframe-topic" style="width: {{ dim[1] }}px;">{{ dim[1] }}x{{ dim[0] }} ({%- if dim[2] is defined and dim[2] != '' -%}
+            {{ dim[2] }}
+        {%- else -%}
+            {% if dim[0] < dim[1] %}
+                {{ 'Landscape' | trans }}
+            {% else %}
+                {{ 'Portrait' | trans }}
+            {% endif %}
+            {%- endif -%})
+            <a href="#" class="pull-right refresh-iframe" id="b{{ loop.index }}">{{ 'Reload' | trans }}</a>
+        </div>
+        {{ box.write_iframe(dim[1], max(568, dim[0] + 25 + 2), url, loop) }}
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+{% endmacro %}
+
+{% import _self as box %}
+
+{% block response %}
+    {% if is_large %}{{ '</div>' }}{% endif %}
+    {% for dim in dimensions %}
+        {{ box.iframe_box(dim, url, loop) }}
+    {% endfor %}
+    <div class="clearfix"></div>
+    {% if is_large %}{{ '<div class="container">' }}{% endif %}
+{% endblock %}
+
+{#
 <form action="" method="post">
     <div class="span2">URL:</div>
     <div class="span10">
@@ -58,3 +108,5 @@
 <div class="container">
 
 {% endblock %}
+
+#}

@@ -11,6 +11,7 @@
     </div>
     {{ form_end(form) }}
 
+    {% block response %}
     {% if result is defined and result is not empty %}
         <div class="row">
             <div class="form-group">
@@ -20,4 +21,6 @@
             </div>
         </div>
     {% endif %}
+    {% endblock %}
+
 {% endblock %}

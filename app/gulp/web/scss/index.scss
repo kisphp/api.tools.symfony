@@ -3,3 +3,24 @@
   padding-right: 10px;
   float: left;
 }
+
+.iframe-topic {
+  font-weight: 700;
+  height: 25px;
+  background: #3c3c3c;
+  color: #fff;
+  padding-left: 10px;
+  line-height: 25px
+}
+
+.refresh-iframe {
+  font-weight: 400;
+  padding-right: 5px;
+  color: #cfcfcf;
+
+  &:focus,
+  &:hover {
+    color: #fff
+  }
+}
+
