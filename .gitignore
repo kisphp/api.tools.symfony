@@ -21,3 +21,4 @@ web/js
 web/css/
 _vm/
 *.log
+web/index.php

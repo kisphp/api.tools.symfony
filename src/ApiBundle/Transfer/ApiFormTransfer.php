@@ -2,6 +2,9 @@
 
 namespace ApiBundle\Transfer;
 
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+
 class ApiFormTransfer
 {
     const FIELD_SOURCE = 'source';
@@ -17,6 +20,16 @@ class ApiFormTransfer
      * @var string
      */
     protected $type;
+
+    /**
+     * @param ClassMetadata $metadata
+     */
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraints('source', [
+            new NotBlank(),
+        ]);
+    }
 
     /**
      * @return string

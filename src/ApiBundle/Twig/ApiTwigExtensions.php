@@ -23,7 +23,7 @@ class ApiTwigExtensions extends \Twig_Extension
      */
     public function rawCode($code)
     {
-        return stripslashes($code);
+        return htmlentities(stripslashes($code), ENT_QUOTES, 'UTF-8');
     }
 
     /**
