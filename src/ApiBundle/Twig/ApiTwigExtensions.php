@@ -12,7 +12,7 @@ class ApiTwigExtensions extends \Twig_Extension
         return [
             new \Twig_SimpleFilter('raw_code', [$this, 'rawCode'], [
                 'is_safe' => ['html'],
-            ])
+            ]),
         ];
     }
 
