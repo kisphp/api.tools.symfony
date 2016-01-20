@@ -33,5 +33,4 @@ class ApiTwigExtensions extends \Twig_Extension
     {
         return 'api_extension';
     }
-
 }
