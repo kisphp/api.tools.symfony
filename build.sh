@@ -23,4 +23,6 @@ rm -rf var/cache/test
 
 $NPM install
 
-$PHPUNIT
+if [[ "dev" == "$1" ]]; then
+    $PHPUNIT
+fi
