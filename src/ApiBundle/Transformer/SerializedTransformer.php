@@ -4,7 +4,7 @@ namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
 
-class SerializedTransformer
+class SerializedTransformer implements TransformerInterface
 {
     /**
      * @param DecoderInterface $decoder

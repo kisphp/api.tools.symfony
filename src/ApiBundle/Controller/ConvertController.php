@@ -7,6 +7,7 @@ use ApiBundle\Form\JsonForm;
 use ApiBundle\Decoder\TextDecoder;
 use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Decoder\SerializedDecoder;
+use ApiBundle\Form\SerializedForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
 use ApiBundle\Transformer\FactoryTransformer;
@@ -67,7 +68,7 @@ class ConvertController extends Controller
     public function serializedAction(Request $request)
     {
         $formDefault = (new ApiFormTransfer())->setType(JsonForm::VALUE_PHP);
-        $form = $this->createForm(JsonForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createForm(SerializedForm::class, $formDefault)->handleRequest($request);
         $result = new ResultTransfer();
 
         if ($form->isValid()) {

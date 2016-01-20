@@ -4,7 +4,7 @@ namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
 
-class Encode64Transformer implements TransformerInterface
+class JsonTransformer implements TransformerInterface
 {
     /**
      * @param DecoderInterface $decoder
@@ -13,6 +13,6 @@ class Encode64Transformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return base64_encode($decoder->getData());
+        return json_encode($decoder->getData(), JSON_PRETTY_PRINT);
     }
 }
