@@ -9,10 +9,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Base64Form extends AbstractType
+class SerializedForm extends AbstractType
 {
-    const VALUE_ENCODE_64 = 'Encode64';
-    const VALUE_DECODE_64 = 'Decode64';
+    const VALUE_PHP = 'Php';
+    const VALUE_XML = 'Xml';
+    const VALUE_JSON = 'Json';
 
     /**
      * @param FormBuilderInterface $builder
@@ -34,8 +35,9 @@ class Base64Form extends AbstractType
                     'class' => 'form-inline',
                 ],
                 'choices' => [
-                    'Encode' => self::VALUE_ENCODE_64,
-                    'Decode' => self::VALUE_DECODE_64,
+                    'PHP' => self::VALUE_PHP,
+                    'XML' => self::VALUE_XML,
+                    'Json' => self::VALUE_JSON,
                 ],
             ])
         ;
@@ -61,6 +63,6 @@ class Base64Form extends AbstractType
      */
     public function getName()
     {
-        return 'base64';
+        return 'json';
     }
 }

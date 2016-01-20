@@ -19,3 +19,5 @@ node_modules/
 web/bower/
 web/js
 web/css/
+_vm/
+*.log
