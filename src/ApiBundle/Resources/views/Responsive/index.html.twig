@@ -1,5 +1,9 @@
 {% extends '::form.html.twig' %}
 
+{% block title %}
+    {{ 'Responsive' | trans }}
+{% endblock %}
+
 {% macro write_iframe(width, height, url, loop) %}
     <iframe src="{{ url }}" id="iframe-a{{ loop.index }}" frameborder="0" style="width: {{ width }}px; height: {{ height }}px;"></iframe>
     {#<iframe src="{{ url }}" id="iframe-b{{ loop.index }}" frameborder="0" style="width: {{ dim[1] }}px; height: {{ max(568, dim[0] + 25 + 2) }}px;"></iframe>#}
@@ -41,10 +45,6 @@
 {% endmacro %}
 
 {% import _self as box %}
-
-{% block title %}
-    {{ 'Responsive test' | trans }}
-{% endblock %}
 
 {% block response %}
     {% if is_large %}{{ '</div>' }}{% endif %}

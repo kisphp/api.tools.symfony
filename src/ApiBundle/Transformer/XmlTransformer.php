@@ -24,6 +24,9 @@ class XmlTransformer implements TransformerInterface
                     $item = $xml->addChild($key);
                 }
                 foreach ($value as $k => $v) {
+                    if (is_array($v)) {
+                        continue;
+                    }
                     $item->addChild($k, $v);
                 }
                 continue;

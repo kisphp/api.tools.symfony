@@ -1,5 +1,10 @@
 {% extends "::base.html.twig" %}
 
+{% block title %}
+    {{ parent() }} convertor
+    | Keep IT Simple PHP
+{% endblock %}
+
 {% block body %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
