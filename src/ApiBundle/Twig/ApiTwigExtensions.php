@@ -2,6 +2,8 @@
 
 namespace ApiBundle\Twig;
 
+use ApiBundle\Twig\Filters\RawCodeFilter;
+
 class ApiTwigExtensions extends \Twig_Extension
 {
     /**
@@ -10,20 +12,8 @@ class ApiTwigExtensions extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('raw_code', [$this, 'rawCode'], [
-                'is_safe' => ['html'],
-            ]),
+            new RawCodeFilter(),
         ];
-    }
-
-    /**
-     * @param string $code
-     *
-     * @return string
-     */
-    public function rawCode($code)
-    {
-        return htmlentities(stripslashes($code), ENT_QUOTES, 'UTF-8');
     }
 
     /**
