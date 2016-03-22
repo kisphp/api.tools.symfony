@@ -16,7 +16,6 @@ else
     $COMPOSER install --no-dev -o -a
 fi
 
-
 $NPM install
 
 if [[ "dev" == "$1" ]]; then

@@ -16,9 +16,10 @@
 /web/bundles/
 .idea/
 node_modules/
-web/bower/
+bower/
 web/js
 web/css/
 _vm/
 *.log
 web/index.php
+web/fonts/
