@@ -47,16 +47,11 @@ gulp.task('css', ['css-external'], function(){
 
 gulp.task('js-external', function(){
     return gulp.src([
-        config.bowerDir + 'jquery/dist/jquery.js',
-        config.bowerDir + 'bootstrap/dist/js/bootstrap.js',
+        config.bowerDir + 'jquery/dist/jquery.min.js',
+        config.bowerDir + 'bootstrap/dist/js/bootstrap.min.js',
         config.bowerDir + 'sweetalert/dist/sweetalert.min.js'
     ])
         .pipe(p.plumber())
-        .pipe(p.browserify({
-            insertGlobals: true,
-            debug: false
-        }))
-        .pipe(p.uglify())
         .pipe(p.concat('external.js'))
         .pipe(gulp.dest(config.targetDir + 'js'));
 });
