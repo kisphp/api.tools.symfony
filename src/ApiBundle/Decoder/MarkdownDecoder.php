@@ -4,27 +4,27 @@ namespace ApiBundle\Decoder;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 
-class JsonDecoder implements DecoderInterface
+class MarkdownDecoder implements DecoderInterface
 {
     /**
-     * @var array
+     * @var string
      */
     protected $data;
 
     /**
      * @param ApiFormTransfer $formTransfer
      *
-     * @return self
+     * @return $this
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
-        $this->data = json_decode($formTransfer->getSource(), true);
+        $this->data = $formTransfer->getSource();
 
         return $this;
     }
 
     /**
-     * @return array
+     * @return string
      */
     public function getData()
     {

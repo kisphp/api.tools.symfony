@@ -37,7 +37,10 @@
                             <a href="{{ path('api_serialized_convert') }}">{{ 'Serialized' | trans }}</a>
                         </li>
                         <li{% if route == 'api_responsive' %} class="active"{% endif %}>
-                            <a href="{{ path('api_responsive') }}">{{ 'Responsive' }}</a>
+                            <a href="{{ path('api_responsive') }}">{{ 'Responsive' | trans }}</a>
+                        </li>
+                        <li{% if route == 'api_markdown' %} class="active"{% endif %}>
+                            <a href="{{ path('api_markdown') }}">{{ 'Markdown Parser' | trans }}</a>
                         </li>
                     </ul>
 

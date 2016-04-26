@@ -17,3 +17,7 @@ api_serialized_convert:
 api_responsive:
     path: /responsive
     defaults: { _controller: ApiBundle:Responsive:index }
+
+api_markdown:
+    path: /markdown-parser
+    defaults: { _controller: ApiBundle:Convert:markdown }
