@@ -6,6 +6,8 @@
 {% endblock %}
 
 {% block body %}
+    {% block before_content %}{% endblock %}
+
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
@@ -28,4 +30,5 @@
     {% endif %}
     {% endblock %}
 
+    {% block after_content %}{% endblock %}
 {% endblock %}

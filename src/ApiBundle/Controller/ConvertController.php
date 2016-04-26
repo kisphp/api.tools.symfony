@@ -2,11 +2,13 @@
 
 namespace ApiBundle\Controller;
 
+use ApiBundle\Decoder\MarkdownDecoder;
 use ApiBundle\Form\Base64Form;
 use ApiBundle\Form\JsonForm;
 use ApiBundle\Decoder\TextDecoder;
 use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Decoder\SerializedDecoder;
+use ApiBundle\Form\MarkdownForm;
 use ApiBundle\Form\SerializedForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
@@ -84,6 +86,28 @@ class ConvertController extends Controller
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Serialized',
+        ]);
+    }
+
+    public function markdownAction(Request $request)
+    {
+        $formDefault = (new ApiFormTransfer())->setType('Markdown');
+        $form = $this->createForm(MarkdownForm::class, $formDefault)->handleRequest($request);
+        $result = new ResultTransfer();
+
+        if ($form->isValid()) {
+            $manager = new MarkdownDecoder();
+            $manager->transform($form->getData());
+
+            $response = FactoryTransformer::createResponse($form->getData(), $manager);
+
+            $result->setResult($response);
+        }
+
+        return $this->render('ApiBundle:Markdown:index.html.twig', [
+            'form' => $form->createView(),
+            'result' => $result->getResult(),
+            'page_title' => 'Markdown online parser',
         ]);
     }
 }

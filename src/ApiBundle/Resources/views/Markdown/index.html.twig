@@ -1,0 +1,19 @@
+{% extends "::form.html.twig" %}
+
+{% block before_content %}
+    <blockquote>
+        This page uses a highly extandable and customizable <a href="https://github.com/kisphp/markdown-parser" target="_blank" title="Kisphp Markdown Parser">Kisphp Markdown Parser</a>
+    </blockquote>
+{% endblock %}
+
+{% block response %}
+    {% if result is defined and result is not empty %}
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <pre><code>{{ result | raw }}</code></pre>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
