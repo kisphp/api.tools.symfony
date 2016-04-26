@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ce84e0c437bf7d736e4fc7f89a2861e8",
-    "content-hash": "9ee180ff1a4e33fea8e0d9cd1bb4bae2",
+    "hash": "e156463f7efcb88ec7d2b6b77f67e66a",
+    "content-hash": "d1ffc02c09e11f3745658d3d076ea53c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -750,12 +750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/markdown-parser.git",
-                "reference": "b684a03ead55f3a03a7e0b4cd0e05aff7c53a4a6"
+                "reference": "827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kisphp/markdown-parser/zipball/b684a03ead55f3a03a7e0b4cd0e05aff7c53a4a6",
-                "reference": "b684a03ead55f3a03a7e0b4cd0e05aff7c53a4a6",
+                "url": "https://api.github.com/repos/kisphp/markdown-parser/zipball/827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c",
+                "reference": "827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c",
                 "shasum": ""
             },
             "require": {
@@ -790,7 +790,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2016-04-25 21:41:45"
+            "time": "2016-04-26 18:13:49"
         },
         {
             "name": "monolog/monolog",
