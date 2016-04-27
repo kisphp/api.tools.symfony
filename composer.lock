@@ -746,16 +746,16 @@
         },
         {
             "name": "kisphp/markdown-parser",
-            "version": "0.3.0",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/markdown-parser.git",
-                "reference": "827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c"
+                "reference": "3d605e0ea6906c06f32b5ff990928d5479ca963a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kisphp/markdown-parser/zipball/827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c",
-                "reference": "827ce5b41472c5c861a18d9d07b3b2d59b6c7d7c",
+                "url": "https://api.github.com/repos/kisphp/markdown-parser/zipball/3d605e0ea6906c06f32b5ff990928d5479ca963a",
+                "reference": "3d605e0ea6906c06f32b5ff990928d5479ca963a",
                 "shasum": ""
             },
             "require": {
@@ -790,7 +790,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2016-04-26 18:13:49"
+            "time": "2016-04-27 05:55:09"
         },
         {
             "name": "monolog/monolog",
