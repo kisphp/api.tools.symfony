@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e156463f7efcb88ec7d2b6b77f67e66a",
-    "content-hash": "d1ffc02c09e11f3745658d3d076ea53c",
+    "hash": "c093616693894cd4e034cd127a2b1434",
+    "content-hash": "993127624ee23e956b27b4e6e64f430d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -746,7 +746,7 @@
         },
         {
             "name": "kisphp/markdown-parser",
-            "version": "dev-master",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/markdown-parser.git",
@@ -1973,9 +1973,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "kisphp/markdown-parser": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
