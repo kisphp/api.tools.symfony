@@ -1,1 +1,29 @@
 {% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+    <form action="" method="post" class="form-horizontal">
+        <div class="col-md-2">URL:</div>
+        <div class="col-md-10"><input type="text" class="form-control" name="url" value="{{ url }}" />
+            <div><sup><small>http://api.kisphp.net/api/test/</small></sup></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-2">Send Data:<br /><span style="font-size: 11px;">JSON format or GET url format</span></div>
+        <div class="col-md-10"><textarea name="request" class="form-control" style="min-height: 150px;">{{request}}</textarea></div>
+        <div class="desp-10"></div>
+
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-10"><button class="btn btn-primary">Send</button>
+            &nbsp;<label class="checkbox-inline"><input{% if post_array == 'on' %} checked="checked"{% endif %} type="checkbox" name="array"> Display as array</label>
+        </div>
+        <div class="desp-10"></div>
+        {% if result|length > 0 %}
+            <div class="col-md-2">Response:</div>
+            <div class="col-md-10">{{result|raw}}</div>
+            <div class="clearfix"></div>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

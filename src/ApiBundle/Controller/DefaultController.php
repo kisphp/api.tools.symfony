@@ -18,6 +18,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return [];
+        $url = $request->request->get('url');
+        $requestData = $request->request->get('request');
+
+        return [
+            'url' => $url,
+            'request' => $requestData,
+            'result' => 'aa',
+            'post_array' => '',
+        ];
     }
 }
