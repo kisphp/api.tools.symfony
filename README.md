@@ -1,5 +1,7 @@
 # PHP online test tools
 
+[![Build Status](https://travis-ci.org/kisphp/api.tools.symfony.svg?branch=master)](https://travis-ci.org/kisphp/api.tools.symfony)
+
 Requirements
 ------------
 
