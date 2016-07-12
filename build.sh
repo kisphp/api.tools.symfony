@@ -20,7 +20,7 @@ function writeIndexFile {
 
     echo "<?php " > web/index.php
     echo " " >> web/index.php
-    echo "include __DIR__ . 'app$TYPE.php';" >> web/index.php
+    echo "include __DIR__ . '/app$TYPE.php';" >> web/index.php
 
     exit 0
 }
