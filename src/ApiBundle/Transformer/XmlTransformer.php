@@ -34,6 +34,11 @@ class XmlTransformer implements TransformerInterface
             $xml->addChild($key, $value);
         }
 
-        return $xml->asXML();
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $dom->loadXML($xml->asXML());
+
+        return $dom->saveXML();
     }
 }
