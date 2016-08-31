@@ -23,3 +23,5 @@ _vm/
 *.log
 web/index.php
 web/fonts/
+var/SymfonyRequirements.php
+bin/symfony_requirements
