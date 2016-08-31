@@ -1791,16 +1791,9 @@
             "conflict": {
                 "hhvm": "<3.9"
             },
-            "conflict": {
-                "hhvm": "<3.9"
-            },
             "require-dev": {
                 "phpunit/phpunit": "^4.5|^5",
-<<<<<<< HEAD
-                "satooshi/php-coveralls": "^0.7.1"
-=======
                 "satooshi/php-coveralls": "^1.0"
->>>>>>> 4455f24... update dependencies
             },
             "bin": [
                 "php-cs-fixer"
@@ -1826,12 +1819,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-<<<<<<< HEAD
-            "abandoned": "friendsofphp/php-cs-fixer",
-            "time": "2016-07-06 22:49:35"
-=======
             "time": "2016-08-17 00:17:27"
->>>>>>> 4455f24... update dependencies
         },
         {
             "name": "sebastian/diff",
@@ -1939,11 +1927,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-<<<<<<< HEAD
-            "version": "v3.1.2",
-=======
             "version": "v3.1.3",
->>>>>>> 4455f24... update dependencies
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
