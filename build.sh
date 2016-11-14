@@ -69,7 +69,7 @@ labelText "Run assets:install"
 $PHP $PWD/bin/console assets:install
 
 labelText "Remove cache files"
-find app/cache/* -maxdepth 0 -type d | xargs rm -rf
+find var/cache/* -maxdepth 0 -type d | xargs rm -rf
 
 labelText "Run npm install"
 $NPM install
