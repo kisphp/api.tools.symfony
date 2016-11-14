@@ -9,12 +9,12 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class JsonForm extends AbstractType
+class YamlForm extends AbstractType
 {
     const VALUE_PHP = 'Php';
     const VALUE_XML = 'Xml';
     const VALUE_SERIALIZED = 'Serialized';
-    const VALUE_YAML = 'Yaml';
+    const VALUE_JSON = 'Json';
 
     /**
      * @param FormBuilderInterface $builder
@@ -39,7 +39,7 @@ class JsonForm extends AbstractType
                     'PHP' => self::VALUE_PHP,
                     'XML' => self::VALUE_XML,
                     'Serialized' => self::VALUE_SERIALIZED,
-                    'Yaml' => self::VALUE_YAML,
+                    'Json' => self::VALUE_JSON,
                 ],
             ])
         ;
@@ -65,6 +65,6 @@ class JsonForm extends AbstractType
      */
     public function getName()
     {
-        return 'json';
+        return 'yaml';
     }
 }
