@@ -3,6 +3,7 @@
 namespace ApiBundle\Controller;
 
 use ApiBundle\Decoder\MarkdownDecoder;
+use ApiBundle\Decoder\YamlDecoder;
 use ApiBundle\Form\Base64Form;
 use ApiBundle\Form\JsonForm;
 use ApiBundle\Decoder\TextDecoder;
@@ -10,6 +11,7 @@ use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Decoder\SerializedDecoder;
 use ApiBundle\Form\MarkdownForm;
 use ApiBundle\Form\SerializedForm;
+use ApiBundle\Form\YamlForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
 use ApiBundle\Transformer\FactoryTransformer;
@@ -18,6 +20,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ConvertController extends Controller
 {
+    const TEMPLATE_CONVERTOR = 'ApiBundle::form.html.twig';
+
     /**
      * @param Request $request
      *
@@ -38,10 +42,37 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('::form.html.twig', [
+        return $this->render(self::TEMPLATE_CONVERTOR, [
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Json',
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function yamlAction(Request $request)
+    {
+        $formDefault = (new ApiFormTransfer())->setType(YamlForm::VALUE_PHP);
+        $form = $this->createForm(YamlForm::class, $formDefault)->handleRequest($request);
+        $result = new ResultTransfer();
+
+        if ($form->isValid()) {
+            $manager = new YamlDecoder();
+            $manager->transform($form->getData());
+
+            $response = FactoryTransformer::createResponse($form->getData(), $manager);
+
+            $result->setResult($response);
+        }
+
+        return $this->render(self::TEMPLATE_CONVERTOR, [
+            'form' => $form->createView(),
+            'result' => $result->getResult(),
+            'page_title' => 'Yaml',
         ]);
     }
 
@@ -60,7 +91,7 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('::form.html.twig', [
+        return $this->render(self::TEMPLATE_CONVERTOR, [
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Base 64',
@@ -82,7 +113,7 @@ class ConvertController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('::form.html.twig', [
+        return $this->render(self::TEMPLATE_CONVERTOR, [
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Serialized',

@@ -6,6 +6,10 @@ api_json_convert:
     path: /convert/json
     defaults: { _controller: ApiBundle:Convert:json }
 
+api_yaml_convert:
+    path: /convert/yaml
+    defaults: { _controller: ApiBundle:Convert:yaml }
+
 api_base64_convert:
     path: /convert/base64
     defaults: { _controller: ApiBundle:Convert:base64 }
