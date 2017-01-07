@@ -25,10 +25,15 @@ class SerializedFormTest extends TypeTestCase
         $view = $form->createView();
         $children = $view->children;
 
-        $this->assertNotEmpty($form->getName());
-
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);
         }
+    }
+
+    public function testFormName()
+    {
+        $form = new SerializedForm();
+
+        $this->assertNotEmpty($form->getName());
     }
 }

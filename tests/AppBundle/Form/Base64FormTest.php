@@ -24,10 +24,15 @@ class Base64FormTest extends TypeTestCase
         $view = $form->createView();
         $children = $view->children;
 
-        $this->assertNotEmpty($form->getName());
-
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);
         }
+    }
+
+    public function testFormName()
+    {
+        $form = new Base64Form();
+
+        $this->assertNotEmpty($form->getName());
     }
 }
