@@ -2,20 +2,19 @@
 
 namespace Test\AppBundle\Form;
 
-use ApiBundle\Form\JsonForm;
-use ApiBundle\Form\ResponsiveForm;
+use ApiBundle\Form\YamlForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-class ResponsiveFormTest extends TypeTestCase
+class YamlFormTest extends TypeTestCase
 {
     public function testSubmitValidData()
     {
         $formData = array(
-            ApiFormTransfer::FIELD_SOURCE => 'http://www.example.com',
+            ApiFormTransfer::FIELD_SOURCE => 'hello: ~',
         );
 
-        $form = $this->factory->create(ResponsiveForm::class);
+        $form = $this->factory->create(YamlForm::class);
 
         $form->submit($formData);
 
@@ -32,7 +31,7 @@ class ResponsiveFormTest extends TypeTestCase
 
     public function testFormName()
     {
-        $form = new ResponsiveForm();
+        $form = new YamlForm();
 
         $this->assertNotEmpty($form->getName());
     }

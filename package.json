@@ -1,14 +1,14 @@
 {
-  "name": "symfony_cms",
+  "name": "kisphp_api_tools",
   "version": "1.0.0",
-  "description": "symfony_cms",
+  "description": "Kisphp API Tools",
   "main": "index.js",
   "scripts": {
     "setup": "bower install",
     "web": "gulp --gulpfile app/gulp/web/gulpfile.js --cwd .",
     "postinstall": "npm run setup && npm run web"
   },
-  "author": "Marius",
+  "author": "Bogdan Rizac",
   "license": "MIT",
   "dependencies": {
     "bower": "^1.7.1",

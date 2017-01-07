@@ -27,3 +27,4 @@ var/SymfonyRequirements.php
 bin/symfony_requirements
 web/*.zip
 web/.htaccess
+tests/coverage/

@@ -28,4 +28,11 @@ class JsonFormTest extends TypeTestCase
             $this->assertArrayHasKey($key, $children);
         }
     }
+
+    public function testFormName()
+    {
+        $form = new JsonForm();
+
+        $this->assertNotEmpty($form->getName());
+    }
 }

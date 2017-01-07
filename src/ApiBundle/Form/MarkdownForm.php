@@ -10,6 +10,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class MarkdownForm extends AbstractType
 {
+    const VALUE_MARKDOWN = 'Markdown';
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options

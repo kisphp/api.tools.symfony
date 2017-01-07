@@ -42,7 +42,7 @@ class ApiFormTransfer
     /**
      * @param string $source
      *
-     * @return $this
+     * @return ApiFormTransfer
      */
     public function setSource($source)
     {
@@ -62,7 +62,7 @@ class ApiFormTransfer
     /**
      * @param string $type
      *
-     * @return $this
+     * @return ApiFormTransfer
      */
     public function setType($type)
     {
