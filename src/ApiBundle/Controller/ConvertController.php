@@ -12,8 +12,6 @@ use ApiBundle\Decoder\SerializedDecoder;
 use ApiBundle\Form\MarkdownForm;
 use ApiBundle\Form\SerializedForm;
 use ApiBundle\Form\YamlForm;
-use ApiBundle\Transfer\ApiFormTransfer;
-use ApiBundle\Transfer\ResultTransfer;
 use ApiBundle\Transfer\TransferFactory;
 use ApiBundle\Transformer\FactoryTransformer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
