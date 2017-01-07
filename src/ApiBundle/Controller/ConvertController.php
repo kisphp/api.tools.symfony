@@ -28,8 +28,7 @@ class ConvertController extends Controller
      */
     public function jsonAction(Request $request)
     {
-        $formDefault = TransferFactory::createApiForm()->setType(JsonForm::VALUE_PHP);
-        $form = $this->createForm(JsonForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createApiForm($request, JsonForm::VALUE_PHP, JsonForm::class);
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
@@ -55,8 +54,7 @@ class ConvertController extends Controller
      */
     public function yamlAction(Request $request)
     {
-        $formDefault = TransferFactory::createApiForm()->setType(YamlForm::VALUE_PHP);
-        $form = $this->createForm(YamlForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createApiForm($request, YamlForm::VALUE_PHP, YamlForm::class);
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
@@ -82,8 +80,7 @@ class ConvertController extends Controller
      */
     public function base64Action(Request $request)
     {
-        $formDefault = TransferFactory::createApiForm()->setType(Base64Form::VALUE_ENCODE_64);
-        $form = $this->createForm(Base64Form::class, $formDefault)->handleRequest($request);
+        $form = $this->createApiForm($request, Base64Form::VALUE_ENCODE_64, Base64Form::class);
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
@@ -109,8 +106,8 @@ class ConvertController extends Controller
      */
     public function serializedAction(Request $request)
     {
-        $formDefault = TransferFactory::createApiForm()->setType(JsonForm::VALUE_PHP);
-        $form = $this->createForm(SerializedForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createApiForm($request, JsonForm::VALUE_PHP, SerializedForm::class);
+
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
@@ -136,8 +133,7 @@ class ConvertController extends Controller
      */
     public function markdownAction(Request $request)
     {
-        $formDefault = TransferFactory::createApiForm()->setType('Markdown');
-        $form = $this->createForm(MarkdownForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createApiForm($request, MarkdownForm::VALUE_MARKDOWN, MarkdownForm::class);
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
@@ -154,5 +150,22 @@ class ConvertController extends Controller
             'result' => $result->getResult(),
             'page_title' => 'Markdown online parser',
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param $formType
+     * @param $formClassNamespace
+     *
+     * @return \Symfony\Component\Form\FormInterface
+     */
+    protected function createApiForm(Request $request, $formType, $formClassNamespace)
+    {
+        $formDefault = TransferFactory::createApiForm($formType);
+        $form = $this->createForm($formClassNamespace, $formDefault)
+            ->handleRequest($request)
+        ;
+
+        return $form;
     }
 }
