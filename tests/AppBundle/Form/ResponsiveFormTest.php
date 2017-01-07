@@ -3,6 +3,7 @@
 namespace Test\AppBundle\Form;
 
 use ApiBundle\Form\JsonForm;
+use ApiBundle\Form\ResponsiveForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\Test\TypeTestCase;
 
@@ -14,7 +15,7 @@ class ResponsiveFormTest extends TypeTestCase
             ApiFormTransfer::FIELD_SOURCE => 'http://www.example.com',
         );
 
-        $form = $this->factory->create(JsonForm::class);
+        $form = $this->factory->create(ResponsiveForm::class);
 
         $form->submit($formData);
 
@@ -23,6 +24,8 @@ class ResponsiveFormTest extends TypeTestCase
 
         $view = $form->createView();
         $children = $view->children;
+
+        $this->assertNotEmpty($form->getName());
 
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);

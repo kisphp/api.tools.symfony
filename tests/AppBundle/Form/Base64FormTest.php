@@ -2,7 +2,7 @@
 
 namespace Test\AppBundle\Form;
 
-use ApiBundle\Form\JsonForm;
+use ApiBundle\Form\Base64Form;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\Test\TypeTestCase;
 
@@ -14,7 +14,7 @@ class Base64FormTest extends TypeTestCase
             ApiFormTransfer::FIELD_SOURCE => 'this is my code',
         );
 
-        $form = $this->factory->create(JsonForm::class);
+        $form = $this->factory->create(Base64Form::class);
 
         $form->submit($formData);
 
@@ -23,6 +23,8 @@ class Base64FormTest extends TypeTestCase
 
         $view = $form->createView();
         $children = $view->children;
+
+        $this->assertNotEmpty($form->getName());
 
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);

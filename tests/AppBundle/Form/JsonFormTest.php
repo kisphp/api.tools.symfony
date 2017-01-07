@@ -24,6 +24,8 @@ class JsonFormTest extends TypeTestCase
         $view = $form->createView();
         $children = $view->children;
 
+        $this->assertNotEmpty($form->getName());
+
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);
         }

@@ -2,20 +2,19 @@
 
 namespace Test\AppBundle\Form;
 
-use ApiBundle\Form\JsonForm;
-use ApiBundle\Form\SerializedForm;
+use ApiBundle\Form\MarkdownForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-class SerializedFormTest extends TypeTestCase
+class MarkdownFormTest extends TypeTestCase
 {
     public function testSubmitValidData()
     {
         $formData = array(
-            ApiFormTransfer::FIELD_SOURCE => 'this is my code',
+            ApiFormTransfer::FIELD_SOURCE => '# hello world',
         );
 
-        $form = $this->factory->create(SerializedForm::class);
+        $form = $this->factory->create(MarkdownForm::class);
 
         $form->submit($formData);
 
