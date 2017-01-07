@@ -4,9 +4,8 @@ namespace Test\AppBundle\Transfer;
 
 use ApiBundle\Form\JsonForm;
 use ApiBundle\Transfer\TransferFactory;
-use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
-class TransferFactoryTest extends TestCase
+class TransferFactoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreateApiForm()
     {
