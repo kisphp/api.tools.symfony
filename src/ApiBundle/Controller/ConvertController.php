@@ -14,6 +14,7 @@ use ApiBundle\Form\SerializedForm;
 use ApiBundle\Form\YamlForm;
 use ApiBundle\Transfer\ApiFormTransfer;
 use ApiBundle\Transfer\ResultTransfer;
+use ApiBundle\Transfer\TransferFactory;
 use ApiBundle\Transformer\FactoryTransformer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,9 +30,9 @@ class ConvertController extends Controller
      */
     public function jsonAction(Request $request)
     {
-        $formDefault = (new ApiFormTransfer())->setType(JsonForm::VALUE_PHP);
+        $formDefault = TransferFactory::createApiForm()->setType(JsonForm::VALUE_PHP);
         $form = $this->createForm(JsonForm::class, $formDefault)->handleRequest($request);
-        $result = new ResultTransfer();
+        $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new JsonDecoder();
@@ -56,9 +57,9 @@ class ConvertController extends Controller
      */
     public function yamlAction(Request $request)
     {
-        $formDefault = (new ApiFormTransfer())->setType(YamlForm::VALUE_PHP);
+        $formDefault = TransferFactory::createApiForm()->setType(YamlForm::VALUE_PHP);
         $form = $this->createForm(YamlForm::class, $formDefault)->handleRequest($request);
-        $result = new ResultTransfer();
+        $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new YamlDecoder();
@@ -76,11 +77,16 @@ class ConvertController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function base64Action(Request $request)
     {
-        $formDefault = (new ApiFormTransfer())->setType(Base64Form::VALUE_ENCODE_64);
+        $formDefault = TransferFactory::createApiForm()->setType(Base64Form::VALUE_ENCODE_64);
         $form = $this->createForm(Base64Form::class, $formDefault)->handleRequest($request);
-        $result = new ResultTransfer();
+        $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new TextDecoder();
@@ -98,11 +104,16 @@ class ConvertController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function serializedAction(Request $request)
     {
-        $formDefault = (new ApiFormTransfer())->setType(JsonForm::VALUE_PHP);
+        $formDefault = TransferFactory::createApiForm()->setType(JsonForm::VALUE_PHP);
         $form = $this->createForm(SerializedForm::class, $formDefault)->handleRequest($request);
-        $result = new ResultTransfer();
+        $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new SerializedDecoder();
@@ -120,11 +131,16 @@ class ConvertController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function markdownAction(Request $request)
     {
-        $formDefault = (new ApiFormTransfer())->setType('Markdown');
+        $formDefault = TransferFactory::createApiForm()->setType('Markdown');
         $form = $this->createForm(MarkdownForm::class, $formDefault)->handleRequest($request);
-        $result = new ResultTransfer();
+        $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new MarkdownDecoder();
