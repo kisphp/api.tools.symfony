@@ -77,7 +77,7 @@ if [[ ! `echo "$@" | grep '\-\-no\-frontend'` ]]; then
 fi
 
 if [[ "dev" == "$1" ]]; then
-    $PHPUNIT -c app/
+    $PHPUNIT
 else
     infoText "Not development, no tests run"
 fi
