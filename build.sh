@@ -3,7 +3,7 @@
 PHP=`which php`
 COMPOSER=`which composer`
 NPM=`which npm`
-PHPUNIT=`which phpunit`
+PHPUNIT='vendor/bin/phpunit'
 
 if [[ "dev" == "$1" ]]; then
     export SYMFONY_ENV=dev
