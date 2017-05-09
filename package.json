@@ -20,6 +20,7 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
-    "kisphp-gulp-commander": "^0.2.1"
+    "kisphp-gulp-commander": "^0.2.1",
+    "require-dir": "^0.3.1"
   }
 }
