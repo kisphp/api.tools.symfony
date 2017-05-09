@@ -3,7 +3,7 @@
 PHP=`which php`
 COMPOSER=`which composer`
 NPM=`which npm`
-PHPUNIT=`which phpunit`
+PHPUNIT='vendor/bin/phpunit'
 
 if [[ "dev" == "$1" ]]; then
     export SYMFONY_ENV=dev
@@ -77,7 +77,7 @@ if [[ ! `echo "$@" | grep '\-\-no\-frontend'` ]]; then
 fi
 
 if [[ "dev" == "$1" ]]; then
-    $PHPUNIT -c app/
+    $PHPUNIT
 else
     infoText "Not development, no tests run"
 fi
