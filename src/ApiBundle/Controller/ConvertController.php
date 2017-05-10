@@ -127,6 +127,24 @@ class ConvertController extends Controller
         ]);
     }
 
+  /**
+   * @param Request $request
+   *
+   * @return \Symfony\Component\HttpFoundation\Response
+   */
+    public function textAction(Request $request)
+    {
+        $form = $this->createApiForm($request, TextForm::VALUE_TEXT, TextForm::class);
+
+        $result = TransferFactory::crateResult();
+
+        return $this->render(self::TEMPLATE_CONVERTOR, [
+            'form' => $form->createView(),
+            'result' => $result->getResult(),
+            'page_title' => 'Serialized',
+        ]);
+    }
+
     /**
      * @param Request $request
      *
@@ -182,8 +200,8 @@ class ConvertController extends Controller
 
     /**
      * @param Request $request
-     * @param $formType
-     * @param $formClassNamespace
+     * @param string $formType
+     * @param string $formClassNamespace
      *
      * @return \Symfony\Component\Form\FormInterface
      */

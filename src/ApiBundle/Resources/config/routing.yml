@@ -2,6 +2,10 @@ api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
 
+api_text_convert:
+    path: /convert/text
+    defaults: { _controller: ApiBundle:Convert:text }
+
 api_json_convert:
     path: /convert/json
     defaults: { _controller: ApiBundle:Convert:json }
