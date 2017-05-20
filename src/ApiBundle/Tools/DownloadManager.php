@@ -3,7 +3,6 @@
 namespace ApiBundle\Tools;
 
 use GuzzleHttp\Client;
-use Kisphp\Kisdb;
 use SchemaBundle\Model\ModelService;
 
 class DownloadManager

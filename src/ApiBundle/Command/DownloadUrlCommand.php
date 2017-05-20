@@ -4,7 +4,6 @@ namespace ApiBundle\Command;
 
 use ApiBundle\Tools\DownloadManager;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

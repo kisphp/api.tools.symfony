@@ -13,6 +13,4 @@ class ModelService
         $this->db = Kisdb::getInstance();
         $this->db->connect($dbHost, $dbUser, $dbPass, $dbName);
     }
-
-
 }
