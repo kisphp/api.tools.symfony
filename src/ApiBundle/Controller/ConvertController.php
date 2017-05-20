@@ -162,13 +162,14 @@ class ConvertController extends Controller
     {
         $form = $this->createApiForm($request, TextForm::VALUE_DOWNLOAD, TextForm::class);
 
+        $factoryTransformer = $this->get('factory.transformer');
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
             $manager = new TextDecoder();
             $manager->transform($form->getData());
 
-            $response = FactoryTransformer::createResponse($form->getData(), $manager);
+            $response = $factoryTransformer->createResponse($form->getData(), $manager);
 
             $result->setResult($response);
         }

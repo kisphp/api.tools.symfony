@@ -11,6 +11,8 @@ use Kisphp\Utils\Status;
  */
 class DownloadUrlEntity
 {
+    const TABLE = 'download_urls';
+
     /**
      * @var int
      *
@@ -23,9 +25,9 @@ class DownloadUrlEntity
     /**
      * @var int
      *
-     * @ORM\Column(type="integer", options={"default": 2})
+     * @ORM\Column(type="integer", options={"default": 1})
      */
-    protected $status = Status::ACTIVE;
+    protected $status = Status::INACTIVE;
 
     /**
      * @var \DateTime

@@ -33,7 +33,7 @@ final class FactoryTransformer
 
         if (class_exists($transformerName)) {
             /** @var TransformerInterface $transformer */
-            $transformer = new $transformerName();
+            $transformer = new $transformerName($this->container);
 
             return $transformer->transform($decoder);
         }

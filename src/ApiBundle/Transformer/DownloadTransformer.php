@@ -4,9 +4,22 @@ namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
 use ApiBundle\Tools\DownloadManager;
+use Symfony\Component\DependencyInjection\Container;
 
 class DownloadTransformer implements TransformerInterface
 {
+    /**
+     * @var Container
+     */
+    protected $container;
+
+    /**
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * @param DecoderInterface $decoder
      *
@@ -14,7 +27,7 @@ class DownloadTransformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        $cmd = new DownloadManager();
+        $cmd = new DownloadManager($this->container->get('model.service'));
         $cmd->saveUrlToFile($decoder->getData());
 
         return sprintf('Url: %s was successfully saved', $decoder->getData());

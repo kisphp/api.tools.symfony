@@ -29,3 +29,4 @@ web/*.zip
 web/.htaccess
 tests/coverage/
 downloads/
+_demo/

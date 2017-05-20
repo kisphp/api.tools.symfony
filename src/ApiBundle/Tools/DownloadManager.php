@@ -66,6 +66,8 @@ class DownloadManager
             FILE_APPEND | LOCK_EX
         );
 
+        $this->ms->createUrlModel()->saveUrl($url);
+
         return (bool) $isSuccess;
     }
 
@@ -87,6 +89,11 @@ class DownloadManager
      */
     public function readOneLine()
     {
+        $row = $this->ms->createUrlModel()->getUrlToProcess();
+
+        dump($row);die;
+
+
         $fileContent = file_get_contents($this->getFilePath());
         $lines = explode("\n", $fileContent);
         $firstLine = $lines[0];
