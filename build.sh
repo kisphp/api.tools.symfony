@@ -11,13 +11,13 @@ else
     export SYMFONY_ENV=prod
 fi
 
-ERROR="\e[41m" # background red
-GREEN="\e[42m" # background green
-INFO="\e[43m" # yellow text
-BACKGROUND="\e[44m" # background blue
-BLACKTEXT="\e[30m"
-COLOR="\e[39m" # text white
-NC="\e[0m" # reset
+ERROR="\033[41m" # background red
+GREEN="\033[42m" # background green
+INFO="\033[43m" # yellow text
+BACKGROUND="\033[44m" # background blue
+BLACKTEXT="\033[30m"
+COLOR="\033[39m" # text white
+NC="\033[0m" # reset
 
 function labelText {
     echo -e "\n${BACKGROUND}${COLOR} ${1} ${NC}\n"
