@@ -4,6 +4,7 @@ services:
     public: false
     tags:
       - { name: twig.extension }
-#    api.example:
-#        class: ApiBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+  factory.transformer:
+    class: ApiBundle\Transformer\FactoryTransformer
+    arguments: ["@service_container"]

@@ -3,9 +3,24 @@
 namespace ApiBundle\Tools;
 
 use GuzzleHttp\Client;
+use Kisphp\Kisdb;
+use SchemaBundle\Model\ModelService;
 
 class DownloadManager
 {
+    /**
+     * @var ModelService
+     */
+    protected $ms;
+
+    /**
+     * @param ModelService $ms
+     */
+    public function __construct(ModelService $ms)
+    {
+        $this->ms = $ms;
+    }
+
     /**
      * @return string
      */

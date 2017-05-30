@@ -4,16 +4,30 @@ namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
 use ApiBundle\Transfer\ApiFormTransfer;
+use Symfony\Component\DependencyInjection\Container;
 
-abstract class FactoryTransformer
+final class FactoryTransformer
 {
+    /**
+     * @var Container
+     */
+    protected $container;
+
+    /**
+     * @param Container $container
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * @param ApiFormTransfer $formData
      * @param DecoderInterface $decoder
      *
      * @return string
      */
-    public static function createResponse(ApiFormTransfer $formData, DecoderInterface $decoder)
+    public function createResponse(ApiFormTransfer $formData, DecoderInterface $decoder)
     {
         $transformerName = '\\ApiBundle\\Transformer\\' . $formData->getType() . 'Transformer';
 

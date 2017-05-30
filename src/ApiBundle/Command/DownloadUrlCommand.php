@@ -3,11 +3,12 @@
 namespace ApiBundle\Command;
 
 use ApiBundle\Tools\DownloadManager;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class DownloadUrlCommand extends Command
+class DownloadUrlCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
@@ -24,7 +25,13 @@ class DownloadUrlCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $cmd = new DownloadManager();
+        $database = $this->getApplication()
+            ->getKernel()
+            ->getContainer()
+            ->get('model.service')
+        ;
+
+        $cmd = new DownloadManager($database);
         $isSuccess = $cmd->downloadFirstFile();
 
         if (!$isSuccess) {
