@@ -61,6 +61,9 @@ class DownloadManager
     public function downloadFirstFile()
     {
         $url = $this->readOneLine();
+        if (empty($url)) {
+            return false;
+        }
 
         return $this->downloadFile($url);
     }
@@ -74,7 +77,7 @@ class DownloadManager
         $lines = explode("\n", $fileContent);
         $firstLine = $lines[0];
         unset($lines[0]);
-        //$this->rewriteFile(implode("\n", $lines));
+        $this->rewriteFile(implode("\n", array_filter($lines)));
 
         return $firstLine;
     }
@@ -88,13 +91,18 @@ class DownloadManager
     {
       $isSuccess = file_put_contents(
           $this->getFilePath(),
-          $content . "\n",
-          FILE_APPEND | LOCK_EX
+          $content . "\n"
       );
 
       return (bool) $isSuccess;
     }
 
+  /**
+   * @param string $fileName
+   * @param string $content
+   *
+   * @return bool
+   */
     protected function saveDownloadedFile($fileName, $content)
     {
       $isSuccess = file_put_contents(
@@ -106,7 +114,9 @@ class DownloadManager
     }
 
     /**
-     * @param $fileUrl
+     * @param string$fileUrl
+     *
+     * @return bool
      */
     public function downloadFile($fileUrl)
     {
@@ -122,7 +132,7 @@ class DownloadManager
             ->getContents()
         ;
 
-        $this->saveDownloadedFile($targetFileName, $response);
+        return $this->saveDownloadedFile($targetFileName, $response);
     }
 
     /**

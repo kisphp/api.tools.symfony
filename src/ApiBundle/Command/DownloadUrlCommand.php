@@ -25,8 +25,13 @@ class DownloadUrlCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $cmd = new DownloadManager();
-//        $cmd->saveUrlToFile('asd');
-//        $cmd->readOneLine();
-        $cmd->downloadFirstFile();
+        $isSuccess = $cmd->downloadFirstFile();
+
+        if (!$isSuccess) {
+            $output->writeln('<info>No file to download</info>');
+            return;
+        }
+
+        $output->writeln('<info>File downloaded successfully</info>');
     }
 }
