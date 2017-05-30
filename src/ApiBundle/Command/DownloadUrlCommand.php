@@ -24,9 +24,9 @@ class DownloadUrlCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-      $cmd = new DownloadManager();
-      $cmd->saveUrlToFile('asd');
-
-      dump('a');
+        $cmd = new DownloadManager();
+//        $cmd->saveUrlToFile('asd');
+//        $cmd->readOneLine();
+        $cmd->downloadFirstFile();
     }
 }
