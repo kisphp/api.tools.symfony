@@ -165,12 +165,12 @@ class ConvertController extends Controller
         $result = TransferFactory::crateResult();
 
         if ($form->isValid()) {
-          $manager = new TextDecoder();
-          $manager->transform($form->getData());
+            $manager = new TextDecoder();
+            $manager->transform($form->getData());
 
-          $response = FactoryTransformer::createResponse($form->getData(), $manager);
+            $response = FactoryTransformer::createResponse($form->getData(), $manager);
 
-          $result->setResult($response);
+            $result->setResult($response);
         }
 
         return $this->render(self::TEMPLATE_CONVERTOR, [
