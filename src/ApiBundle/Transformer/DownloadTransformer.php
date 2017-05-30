@@ -3,25 +3,20 @@
 namespace ApiBundle\Transformer;
 
 use ApiBundle\Decoder\DecoderInterface;
+use ApiBundle\Tools\DownloadManager;
 
 class DownloadTransformer implements TransformerInterface
 {
     /**
-   * @param DecoderInterface $decoder
-   *
-   * @return string
-   */
-  public function transform(DecoderInterface $decoder)
-  {
-      $dirPath = realpath(__DIR__ . '/../../../var/');
-      $filename = '/download-queue.txt';
+     * @param DecoderInterface $decoder
+     *
+     * @return string
+     */
+    public function transform(DecoderInterface $decoder)
+    {
+        $cmd = new DownloadManager();
+        $cmd->saveUrlToFile($decoder->getData());
 
-      if (is_file($dirPath . $filename) === false) {
-          touch($dirPath . $filename);
-      }
-
-      file_put_contents($dirPath . $filename, $decoder->getData() . "\n", FILE_APPEND | LOCK_EX);
-
-      return sprintf('Url: %s was successfully saved', $decoder->getData());
-  }
+        return sprintf('Url: %s was successfully saved', $decoder->getData());
+    }
 }
