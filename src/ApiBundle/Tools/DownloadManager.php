@@ -89,12 +89,12 @@ class DownloadManager
      */
     protected function rewriteFile($content)
     {
-      $isSuccess = file_put_contents(
+        $isSuccess = file_put_contents(
           $this->getFilePath(),
           $content . "\n"
       );
 
-      return (bool) $isSuccess;
+        return (bool) $isSuccess;
     }
 
   /**
@@ -105,12 +105,12 @@ class DownloadManager
    */
     protected function saveDownloadedFile($fileName, $content)
     {
-      $isSuccess = file_put_contents(
+        $isSuccess = file_put_contents(
           $fileName,
           $content . "\n"
       );
 
-      return (bool) $isSuccess;
+        return (bool) $isSuccess;
     }
 
     /**
@@ -152,8 +152,8 @@ class DownloadManager
 
         $i = 1;
         do {
-          $tmp = sprintf($targetFilePath, '_' . $i);
-          $i++;
+            $tmp = sprintf($targetFilePath, '_' . $i);
+            $i++;
         } while (is_file($tmp));
 
         return $tmp;

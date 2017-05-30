@@ -29,6 +29,7 @@ class DownloadUrlCommand extends Command
 
         if (!$isSuccess) {
             $output->writeln('<info>No file to download</info>');
+
             return;
         }
 
