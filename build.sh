@@ -44,7 +44,7 @@ function writeErrorMessage {
 
 if [[ "dev" == "$1" ]]; then
     labelText "Development run"
-    $COMPOSER install
+    $COMPOSER install --no-interaction
 
     labelText "Copy dev index file"
     cp ./app/web/app_dev.php ./web/index.php
@@ -53,7 +53,7 @@ if [[ "dev" == "$1" ]]; then
     cp ./app/web/.htaccess.dev ./web/.htaccess
 else
     labelText "PRODUCTION optimize autoloader"
-    $COMPOSER install --no-dev -o -a
+    $COMPOSER install --no-interaction --no-dev -o -a
 
     labelText "Copy prod index file"
     cp ./app/web/app_prod.php ./web/index.php
