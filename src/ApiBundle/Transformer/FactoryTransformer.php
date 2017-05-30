@@ -24,6 +24,6 @@ abstract class FactoryTransformer
             return $transformer->transform($decoder);
         }
 
-        return sprintf('Transformer %s not implemented', $transformerName);
+        return sprintf('Transformer %s not implemented', str_replace('\\', '\\\\', $transformerName));
     }
 }

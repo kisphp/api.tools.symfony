@@ -25,3 +25,7 @@ api_responsive:
 api_markdown:
     path: /markdown-parser
     defaults: { _controller: ApiBundle:Convert:markdown }
+
+api_download:
+    path: /download
+    defaults: { _controller: ApiBundle:Convert:download }

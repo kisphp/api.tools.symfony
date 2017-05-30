@@ -11,6 +11,7 @@ use ApiBundle\Decoder\JsonDecoder;
 use ApiBundle\Decoder\SerializedDecoder;
 use ApiBundle\Form\MarkdownForm;
 use ApiBundle\Form\SerializedForm;
+use ApiBundle\Form\TextForm;
 use ApiBundle\Form\YamlForm;
 use ApiBundle\Transfer\TransferFactory;
 use ApiBundle\Transformer\FactoryTransformer;
@@ -149,6 +150,33 @@ class ConvertController extends Controller
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Markdown online parser',
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     */
+    public function downloadAction(Request $request)
+    {
+        $form = $this->createApiForm($request, TextForm::VALUE_DOWNLOAD, TextForm::class);
+
+        $result = TransferFactory::crateResult();
+
+        if ($form->isValid()) {
+            $manager = new TextDecoder();
+            $manager->transform($form->getData());
+
+            $response = FactoryTransformer::createResponse($form->getData(), $manager);
+
+            $result->setResult($response);
+        }
+
+        return $this->render(self::TEMPLATE_CONVERTOR, [
+            'form' => $form->createView(),
+            'result' => $result->getResult(),
+            'page_title' => 'Serialized',
         ]);
     }
 

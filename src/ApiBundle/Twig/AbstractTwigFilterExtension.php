@@ -2,7 +2,7 @@
 
 namespace ApiBundle\Twig;
 
-abstract class AbstractTwigFilterExtension extends \Twig_SimpleFilter
+abstract class AbstractTwigFilterExtension extends \Twig_Filter
 {
     public function __construct()
     {
