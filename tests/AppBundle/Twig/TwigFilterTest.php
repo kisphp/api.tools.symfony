@@ -11,7 +11,7 @@ class TwigFilterTest extends TestCase
     {
         $filter = new RawCodeFilter();
 
-        $callable = $filter->getCallable();
+        $callable = $filter->getTwigFilter()->getCallable();
 
         $this->assertSame('asd', $callable('asd'));
     }
