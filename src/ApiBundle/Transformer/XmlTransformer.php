@@ -40,6 +40,6 @@ class XmlTransformer implements TransformerInterface
         $dom->formatOutput = true;
         $dom->loadXML($xml->asXML());
 
-        return $dom->saveXML();
+        return htmlentities($dom->saveXML());
     }
 }

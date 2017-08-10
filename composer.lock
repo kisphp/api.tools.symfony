@@ -1151,12 +1151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/tools.git",
-                "reference": "7c87795ae911e22271f14ae976d377b1b91fb55e"
+                "reference": "52887af9f278c2df515fb1892561dab56b2e31e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kisphp/tools/zipball/7c87795ae911e22271f14ae976d377b1b91fb55e",
-                "reference": "7c87795ae911e22271f14ae976d377b1b91fb55e",
+                "url": "https://api.github.com/repos/kisphp/tools/zipball/52887af9f278c2df515fb1892561dab56b2e31e4",
+                "reference": "52887af9f278c2df515fb1892561dab56b2e31e4",
                 "shasum": ""
             },
             "require": {
@@ -1191,7 +1191,7 @@
                 }
             ],
             "description": "Kisphp tools library",
-            "time": "2017-08-10 15:31:00"
+            "time": "2017-08-10 16:03:53"
         },
         {
             "name": "paragonie/random_compat",

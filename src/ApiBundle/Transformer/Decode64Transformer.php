@@ -14,6 +14,12 @@ class Decode64Transformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return base64_decode($decoder->getData());
+        $data = $decoder->getData();
+
+        if (is_array($data)) {
+            $data = implode("\n", $data);
+        }
+
+        return base64_decode($data);
     }
 }

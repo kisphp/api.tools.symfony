@@ -26,6 +26,12 @@ class MarkdownTransformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return $this->markdown->parse($decoder->getData());
+        $data = $decoder->getData();
+
+        if (is_array($data)) {
+            $data = implode("\n", $data);
+        }
+
+        return $this->markdown->parse($data);
     }
 }
