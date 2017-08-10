@@ -22,16 +22,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return [];
-    }
-
-    /**
-     * @param Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function textAction(Request $request)
-    {
         $defaultData = new ApiFormTransfer();
         $defaultData->setFromDecoder('Json');
         $defaultData->setToTransformer('Php');
@@ -52,10 +42,10 @@ class DefaultController extends Controller
             $result->setResult($response);
         }
 
-        return $this->render('ApiBundle:Markdown:index.html.twig', [
+        return [
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Markdown online parser',
-        ]);
+        ];
     }
 }

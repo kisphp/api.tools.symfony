@@ -28,7 +28,7 @@
             {% set route = app.request.attributes.get('_route') %}
             <ul class="nav navbar-nav">
                 <li{% if route == 'api_text_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_text') }}">{{ 'Convert text' | trans }}</a>
+                    <a href="{{ path('api_homepage') }}">{{ 'Convert text' | trans }}</a>
                 </li>
                 {#<li{% if route == 'api_json_convert' %} class="active"{% endif %}>#}
                     {#<a href="{{ path('api_json_convert') }}">{{ 'Json' | trans }}</a>#}

@@ -9,13 +9,13 @@
     {% block before_content %}{% endblock %}
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+        {{ form_widget(form) }}
 
-    <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-            <input type="submit" class="btn btn-primary" value="{{ 'Convert' | trans }}" />
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" class="btn btn-primary" value="{{ 'Convert' | trans }}" />
+            </div>
         </div>
-    </div>
     {{ form_end(form) }}
 
     {% block response %}
