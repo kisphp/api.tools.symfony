@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6814b609b508f75f8d23666b2e04a1af",
+    "content-hash": "6a5d91a2471df8c668dfa15b87484cb7",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1090,16 +1090,16 @@
         },
         {
             "name": "kisphp/tools",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/tools.git",
-                "reference": "52076703accb0e302d01d5c9c7a44b55d01538d3"
+                "reference": "e36568a355101997e8df96baf5ee052ffd38d28e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kisphp/tools/zipball/52076703accb0e302d01d5c9c7a44b55d01538d3",
-                "reference": "52076703accb0e302d01d5c9c7a44b55d01538d3",
+                "url": "https://api.github.com/repos/kisphp/tools/zipball/e36568a355101997e8df96baf5ee052ffd38d28e",
+                "reference": "e36568a355101997e8df96baf5ee052ffd38d28e",
                 "shasum": ""
             },
             "require": {
@@ -1134,7 +1134,7 @@
                 }
             ],
             "description": "Kisphp tools library",
-            "time": "2017-08-08T19:48:21+00:00"
+            "time": "2017-08-10T11:55:38+00:00"
         },
         {
             "name": "paragonie/random_compat",
