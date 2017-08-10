@@ -2,7 +2,6 @@
 
 namespace ApiBundle\Form;
 
-
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -21,8 +20,8 @@ class TextForm extends AbstractType
      *
      * @return void
      */
-    public function buildForm(FormBuilderInterface $builder, array $options) {
-
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
         $builder
             ->add(ApiFormTransfer::FIELD_SOURCE, TextareaType::class, [
                 'attr' => [
@@ -32,7 +31,7 @@ class TextForm extends AbstractType
             ->add('from_decoder', ChoiceType::class, [
                 'choices' => $this->getDecodersList(),
                 'expanded' => true,
-                'attr'     => [
+                'attr' => [
                     'class' => 'form-inline',
                 ],
                 'preferred_choices' => ['Text', 'Json'],
@@ -40,7 +39,7 @@ class TextForm extends AbstractType
             ->add('to_transformer', ChoiceType::class, [
                 'choices' => $this->getTransformersList(),
                 'expanded' => true,
-                'attr'     => [
+                'attr' => [
                     'class' => 'form-inline',
                 ],
                 'preferred_choices' => ['Php', 'Text'],
@@ -70,7 +69,7 @@ class TextForm extends AbstractType
         $transformers = [];
         $dir = new \DirectoryIterator(__DIR__ . '/../Transformer/');
         foreach ($dir as $fileInfo) {
-            if($fileInfo->isDot() || strpos($fileInfo->getBasename(), 'Interface') !== false) {
+            if ($fileInfo->isDot() || strpos($fileInfo->getBasename(), 'Interface') !== false) {
                 continue;
             }
             $name = str_replace('Transformer.php', '', $fileInfo->getBasename());
@@ -88,7 +87,7 @@ class TextForm extends AbstractType
         $decoders = [];
         $dir = new \DirectoryIterator(__DIR__ . '/../Decoder/');
         foreach ($dir as $fileInfo) {
-            if($fileInfo->isDot() || strpos($fileInfo->getBasename(), 'Interface') !== false) {
+            if ($fileInfo->isDot() || strpos($fileInfo->getBasename(), 'Interface') !== false) {
                 continue;
             }
             $name = str_replace('Decoder.php', '', $fileInfo->getBasename());
@@ -103,10 +102,11 @@ class TextForm extends AbstractType
      *
      * @return void
      */
-    public function configureOptions(OptionsResolver $resolver) {
-      $resolver->setDefaults(
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(
           [
-              'attr'       => [
+              'attr' => [
                   'class' => 'form-horizontal',
               ],
               'data_class' => ApiFormTransfer::class,
@@ -117,7 +117,8 @@ class TextForm extends AbstractType
     /**
      * @return string
      */
-    public function getName() {
-      return 'text';
+    public function getName()
+    {
+        return 'text';
     }
 }

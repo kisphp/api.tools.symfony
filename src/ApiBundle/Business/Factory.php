@@ -2,8 +2,6 @@
 
 namespace ApiBundle\Business;
 
-use ApiBundle\Transfer\ApiFormTransfer;
-
 abstract class Factory
 {
     /**
@@ -36,7 +34,7 @@ abstract class Factory
         $decoderNamespace = '\\ApiBundle\\Decoder\\' . $decoderName . 'Decoder';
 
         if (class_exists($decoderNamespace)) {
-            /** @var TransformerInterface $transformer */
+            /* @var TransformerInterface $transformer */
             return new $decoderNamespace();
         }
 
