@@ -2,7 +2,8 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Decoder\DecoderInterface;
+use ApiBundle\Business\DecoderInterface;
+use ApiBundle\Business\TransformerInterface;
 use ApiBundle\Markdown\ApiMarkdownFactory;
 use Kisphp\Markdown;
 

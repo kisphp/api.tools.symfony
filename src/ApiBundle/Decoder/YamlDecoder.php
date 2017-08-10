@@ -2,6 +2,7 @@
 
 namespace ApiBundle\Decoder;
 
+use ApiBundle\Business\DecoderInterface;
 use ApiBundle\Transfer\ApiFormTransfer;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
@@ -15,6 +16,8 @@ class YamlDecoder implements DecoderInterface
 
     /**
      * @param ApiFormTransfer $formTransfer
+     *
+     * @return DecoderInterface
      */
     public function transform(ApiFormTransfer $formTransfer)
     {
@@ -26,6 +29,8 @@ class YamlDecoder implements DecoderInterface
         }
 
         $this->data = $data;
+
+        return $this;
     }
 
     /**

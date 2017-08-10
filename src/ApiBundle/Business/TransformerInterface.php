@@ -1,8 +1,6 @@
 <?php
 
-namespace ApiBundle\Transformer;
-
-use ApiBundle\Decoder\DecoderInterface;
+namespace ApiBundle\Business;
 
 interface TransformerInterface
 {

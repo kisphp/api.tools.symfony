@@ -2,6 +2,7 @@
 
 namespace ApiBundle\Decoder;
 
+use ApiBundle\Business\DecoderInterface;
 use ApiBundle\Transfer\ApiFormTransfer;
 
 class MarkdownDecoder implements DecoderInterface

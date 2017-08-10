@@ -2,10 +2,13 @@
 
 namespace ApiBundle\Twig\Filters;
 
-use ApiBundle\Twig\AbstractTwigFilterExtension;
+use Kisphp\Twig\AbstractTwigFilter;
+use Kisphp\Twig\IsSafeHtml;
 
-class RawCodeFilter extends AbstractTwigFilterExtension
+class RawCodeFilter extends AbstractTwigFilter
 {
+    use IsSafeHtml;
+
     /**
      * @return string
      */
@@ -22,15 +25,5 @@ class RawCodeFilter extends AbstractTwigFilterExtension
         return function ($code) {
             return htmlentities(stripslashes($code), ENT_QUOTES, 'UTF-8');
         };
-    }
-
-    /**
-     * @return array
-     */
-    protected function getOptions()
-    {
-        return [
-            'is_safe' => ['html'],
-        ];
     }
 }
