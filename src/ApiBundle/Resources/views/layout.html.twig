@@ -28,20 +28,20 @@
             {% set route = app.request.attributes.get('_route') %}
             <ul class="nav navbar-nav">
                 <li{% if route == 'api_text_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_text_convert') }}">{{ 'Text' | trans }}</a>
+                    <a href="{{ path('api_text') }}">{{ 'Convert text' | trans }}</a>
                 </li>
-                <li{% if route == 'api_json_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_json_convert') }}">{{ 'Json' | trans }}</a>
-                </li>
-                <li{% if route == 'api_yaml_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_yaml_convert') }}">{{ 'Yaml' | trans }}</a>
-                </li>
-                <li{% if route == 'api_base64_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_base64_convert') }}">{{ 'Base64' | trans }}</a>
-                </li>
-                <li{% if route == 'api_serialized_convert' %} class="active"{% endif %}>
-                    <a href="{{ path('api_serialized_convert') }}">{{ 'Serialized' | trans }}</a>
-                </li>
+                {#<li{% if route == 'api_json_convert' %} class="active"{% endif %}>#}
+                    {#<a href="{{ path('api_json_convert') }}">{{ 'Json' | trans }}</a>#}
+                {#</li>#}
+                {#<li{% if route == 'api_yaml_convert' %} class="active"{% endif %}>#}
+                    {#<a href="{{ path('api_yaml_convert') }}">{{ 'Yaml' | trans }}</a>#}
+                {#</li>#}
+                {#<li{% if route == 'api_base64_convert' %} class="active"{% endif %}>#}
+                    {#<a href="{{ path('api_base64_convert') }}">{{ 'Base64' | trans }}</a>#}
+                {#</li>#}
+                {#<li{% if route == 'api_serialized_convert' %} class="active"{% endif %}>#}
+                    {#<a href="{{ path('api_serialized_convert') }}">{{ 'Serialized' | trans }}</a>#}
+                {#</li>#}
                 <li{% if route == 'api_responsive' %} class="active"{% endif %}>
                     <a href="{{ path('api_responsive') }}">{{ 'Responsive' | trans }}</a>
                 </li>

@@ -12,7 +12,7 @@ class ApiTwigExtensions extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new RawCodeFilter(),
+            RawCodeFilter::create(),
         ];
     }
 

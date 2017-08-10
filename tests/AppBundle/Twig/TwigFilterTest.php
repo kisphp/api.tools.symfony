@@ -9,9 +9,9 @@ class TwigFilterTest extends TestCase
 {
     public function testRawCodeFilter()
     {
-        $filter = new RawCodeFilter();
+        $filter = RawCodeFilter::create();
 
-        $callable = $filter->getTwigFilter()->getCallable();
+        $callable = $filter->getCallable();
 
         $this->assertSame('asd', $callable('asd'));
     }

@@ -44,20 +44,6 @@ class TextForm extends AbstractType
                 ],
                 'preferred_choices' => ['Php', 'Text'],
             ])
-//            ->add('explode_by', TextType::class)
-//            ->add(
-//                ApiFormTransfer::FIELD_TYPE, ChoiceType::class, [
-//                'expanded' => true,
-//                'attr'     => [
-//                    'class' => 'form-inline',
-//                ],
-//                'choices'  => [
-//                    'PHP'        => self::VALUE_PHP,
-//                    'XML'        => self::VALUE_XML,
-//                    'Serialized' => self::VALUE_SERIALIZED,
-//                    'Yaml'       => self::VALUE_YAML,
-//                ],
-//            ])
         ;
     }
 

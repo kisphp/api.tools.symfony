@@ -18,7 +18,7 @@
         },
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=7.0",
@@ -31,7 +31,9 @@
         "incenteev/composer-parameter-handler": "~2.1",
         "kisphp/markdown-parser": "~0.1|~1.0",
         "kisphp/tools": "dev-future-versions",
-        "sllh/composer-versions-check": "^2.0"
+        "sllh/composer-versions-check": "^2.0",
+        "twig/twig": "2.4.2",
+        "kisphp/twig-extensions": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.1",

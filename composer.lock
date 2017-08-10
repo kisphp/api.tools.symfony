@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "58e59894e8839e9fe228ea583c92d3da",
+    "content-hash": "9f790588f6882c73fb84938fceb0eb2c",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1151,19 +1151,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kisphp/tools.git",
-                "reference": "52887af9f278c2df515fb1892561dab56b2e31e4"
+                "reference": "e194af284a43ecb2362105c6949fe3cd0d882cab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kisphp/tools/zipball/52887af9f278c2df515fb1892561dab56b2e31e4",
-                "reference": "52887af9f278c2df515fb1892561dab56b2e31e4",
+                "url": "https://api.github.com/repos/kisphp/tools/zipball/e194af284a43ecb2362105c6949fe3cd0d882cab",
+                "reference": "e194af284a43ecb2362105c6949fe3cd0d882cab",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3",
                 "php": ">=7.0",
-                "symfony/console": "~2.8|~3.1",
-                "twig/twig": "~2.3"
+                "symfony/console": "~2.8|~3.1"
             },
             "require-dev": {
                 "doctrine/orm": "~2.5.0",
@@ -1172,6 +1171,9 @@
                 "phpunit/phpunit": "^6.1",
                 "symfony/swiftmailer-bundle": "~2.3",
                 "symfony/var-dumper": "^3.0"
+            },
+            "suggest": {
+                "kisphp/twig-extensions": "*"
             },
             "type": "library",
             "autoload": {
@@ -1191,7 +1193,51 @@
                 }
             ],
             "description": "Kisphp tools library",
-            "time": "2017-08-10 16:03:53"
+            "time": "2017-08-10 20:17:01"
+        },
+        {
+            "name": "kisphp/twig-extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kisphp/twig-extensions.git",
+                "reference": "4946727d89c3633cbd27d76808533d2958e0ba02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kisphp/twig-extensions/zipball/4946727d89c3633cbd27d76808533d2958e0ba02",
+                "reference": "4946727d89c3633cbd27d76808533d2958e0ba02",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "twig/twig": "~2.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.9",
+                "phpstan/phpstan": "^0.6.4",
+                "phpunit/phpunit": "^6.1",
+                "symfony/var-dumper": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kisphp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius",
+                    "email": "mariusbogdan83@gmail.com",
+                    "homepage": "http://www.kisphp.com"
+                }
+            ],
+            "description": "Kisphp twig extensions",
+            "time": "2017-08-10 20:11:55"
         },
         {
             "name": "paragonie/random_compat",
@@ -2155,12 +2201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "00897c0222c76f0fab82b6f9077140256daf528b"
+                "reference": "eeaea83d380abd190a999b3addce784ca177ca7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/00897c0222c76f0fab82b6f9077140256daf528b",
-                "reference": "00897c0222c76f0fab82b6f9077140256daf528b",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/eeaea83d380abd190a999b3addce784ca177ca7d",
+                "reference": "eeaea83d380abd190a999b3addce784ca177ca7d",
                 "shasum": ""
             },
             "require": {
@@ -2181,7 +2227,7 @@
                 "twig/twig": "~1.34|~2.4"
             },
             "conflict": {
-                "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.1",
+                "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.2",
                 "phpdocumentor/type-resolver": "<0.2.0",
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
             },
@@ -2300,20 +2346,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-08-10 14:19:11"
+            "time": "2017-08-10 19:55:15"
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.3",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2"
+                "reference": "fe3e3f3359b23b36f65cb600cd516142c07a2e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eab7c3288ae6603d7d6f92b531626af2b162d1f2",
-                "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/fe3e3f3359b23b36f65cb600cd516142c07a2e7d",
+                "reference": "fe3e3f3359b23b36f65cb600cd516142c07a2e7d",
                 "shasum": ""
             },
             "require": {
@@ -2366,7 +2412,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07T18:47:58+00:00"
+            "time": "2017-06-06T03:58:14+00:00"
         }
     ],
     "packages-dev": [
@@ -3937,10 +3983,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "symfony/symfony": 20,
-        "kisphp/tools": 20
+        "kisphp/tools": 20,
+        "kisphp/twig-extensions": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
