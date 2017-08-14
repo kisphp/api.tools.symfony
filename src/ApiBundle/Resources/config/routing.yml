@@ -32,4 +32,4 @@ api_markdown:
 
 api_download:
     path: /download
-    defaults: { _controller: ApiBundle:Convert:download }
+    defaults: { _controller: ApiBundle:Default:download }
