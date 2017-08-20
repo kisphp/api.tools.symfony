@@ -22,6 +22,16 @@ class ApiFormTransfer
     protected $type;
 
     /**
+     * @var string
+     */
+    protected $from_decoder;
+
+    /**
+     * @var string
+     */
+    protected $to_transformer;
+
+    /**
      * @param ClassMetadata $metadata
      */
     public static function loadValidatorMetadata(ClassMetadata $metadata)
@@ -69,5 +79,37 @@ class ApiFormTransfer
         $this->type = $type;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFromDecoder()
+    {
+        return $this->from_decoder;
+    }
+
+    /**
+     * @param string $from_decoder
+     */
+    public function setFromDecoder($from_decoder)
+    {
+        $this->from_decoder = $from_decoder;
+    }
+
+    /**
+     * @return string
+     */
+    public function getToTransformer()
+    {
+        return $this->to_transformer;
+    }
+
+    /**
+     * @param string $to_transformer
+     */
+    public function setToTransformer($to_transformer)
+    {
+        $this->to_transformer = $to_transformer;
     }
 }

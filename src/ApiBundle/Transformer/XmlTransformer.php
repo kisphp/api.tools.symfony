@@ -2,7 +2,8 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Decoder\DecoderInterface;
+use ApiBundle\Business\DecoderInterface;
+use ApiBundle\Business\TransformerInterface;
 
 class XmlTransformer implements TransformerInterface
 {
@@ -39,6 +40,6 @@ class XmlTransformer implements TransformerInterface
         $dom->formatOutput = true;
         $dom->loadXML($xml->asXML());
 
-        return $dom->saveXML();
+        return htmlentities($dom->saveXML());
     }
 }

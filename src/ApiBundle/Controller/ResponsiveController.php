@@ -16,13 +16,15 @@ class ResponsiveController extends Controller
     /**
      * @param Request $request
      *
-     * @return array
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(Request $request)
     {
         $formDefault = new ApiFormTransfer();
         $formDefault->setType(ResponsiveForm::getResolutionChoirces());
-        $form = $this->createForm(ResponsiveForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createForm(ResponsiveForm::class, $formDefault)
+            ->handleRequest($request)
+        ;
 
         $dimensions = [];
         $url = '';

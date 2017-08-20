@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Decoder;
+namespace ApiBundle\Business;
 
 use ApiBundle\Transfer\ApiFormTransfer;
 

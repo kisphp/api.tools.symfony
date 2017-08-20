@@ -28,6 +28,7 @@ class ControllersTest extends WebTestCase
     {
         return [
             ['/'],
+            ['/text'],
             ['/convert/json'],
             ['/convert/base64'],
             ['/convert/serialized'],

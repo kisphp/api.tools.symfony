@@ -28,11 +28,4 @@ class MarkdownFormTest extends TypeTestCase
             $this->assertArrayHasKey($key, $children);
         }
     }
-
-    public function testFormName()
-    {
-        $form = new MarkdownForm();
-
-        $this->assertNotEmpty($form->getName());
-    }
 }

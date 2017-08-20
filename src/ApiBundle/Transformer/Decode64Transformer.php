@@ -2,7 +2,8 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Decoder\DecoderInterface;
+use ApiBundle\Business\DecoderInterface;
+use ApiBundle\Business\TransformerInterface;
 
 class Decode64Transformer implements TransformerInterface
 {
@@ -13,6 +14,12 @@ class Decode64Transformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return base64_decode($decoder->getData());
+        $data = $decoder->getData();
+
+        if (is_array($data)) {
+            $data = implode("\n", $data);
+        }
+
+        return base64_decode($data);
     }
 }

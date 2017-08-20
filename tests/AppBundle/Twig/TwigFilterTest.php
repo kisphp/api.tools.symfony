@@ -9,7 +9,7 @@ class TwigFilterTest extends TestCase
 {
     public function testRawCodeFilter()
     {
-        $filter = new RawCodeFilter();
+        $filter = RawCodeFilter::create();
 
         $callable = $filter->getCallable();
 

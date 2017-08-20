@@ -29,3 +29,5 @@ web/*.zip
 web/.htaccess
 tests/coverage/
 downloads/
+_sym3.4/
+_demo/

@@ -2,7 +2,8 @@
 
 namespace ApiBundle\Transformer;
 
-use ApiBundle\Decoder\DecoderInterface;
+use ApiBundle\Business\DecoderInterface;
+use ApiBundle\Business\TransformerInterface;
 
 class PhpTransformer implements TransformerInterface
 {
@@ -13,6 +14,6 @@ class PhpTransformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return print_r($decoder->getData(), true);
+        return var_export($decoder->getData(), true);
     }
 }
