@@ -22,7 +22,9 @@ class ResponsiveController extends Controller
     {
         $formDefault = new ApiFormTransfer();
         $formDefault->setType(ResponsiveForm::getResolutionChoirces());
-        $form = $this->createForm(ResponsiveForm::class, $formDefault)->handleRequest($request);
+        $form = $this->createForm(ResponsiveForm::class, $formDefault)
+            ->handleRequest($request)
+        ;
 
         $dimensions = [];
         $url = '';

@@ -29,7 +29,7 @@ class DefaultController extends Controller
         $form =$this->createForm(TextForm::class, $defaultData);
         $form->handleRequest($request);
 
-        $result = TransferFactory::crateResult();
+        $result = $this->get('api.transfer_factory')->createResult();
 
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var ApiFormTransfer $data */
@@ -58,7 +58,7 @@ class DefaultController extends Controller
     {
         $form = $this->createApiForm($request, TextForm::VALUE_DOWNLOAD, TextForm::class);
 
-        $result = TransferFactory::crateResult();
+        $result = $this->get('api.transfer_factory')->createResult();
 
         if ($form->isValid()) {
             $manager = new TextDecoder();

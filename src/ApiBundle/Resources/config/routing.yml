@@ -2,25 +2,25 @@ api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
 
-api_text_convert:
-    path: /convert/text
-    defaults: { _controller: ApiBundle:Convert:text }
-
-api_json_convert:
-    path: /convert/json
-    defaults: { _controller: ApiBundle:Convert:json }
-
-api_yaml_convert:
-    path: /convert/yaml
-    defaults: { _controller: ApiBundle:Convert:yaml }
-
-api_base64_convert:
-    path: /convert/base64
-    defaults: { _controller: ApiBundle:Convert:base64 }
-
-api_serialized_convert:
-    path: /convert/serialized
-    defaults: { _controller: ApiBundle:Convert:serialized }
+#api_text_convert:
+#    path: /convert/text
+#    defaults: { _controller: ApiBundle:Convert:text }
+#
+#api_json_convert:
+#    path: /convert/json
+#    defaults: { _controller: ApiBundle:Convert:json }
+#
+#api_yaml_convert:
+#    path: /convert/yaml
+#    defaults: { _controller: ApiBundle:Convert:yaml }
+#
+#api_base64_convert:
+#    path: /convert/base64
+#    defaults: { _controller: ApiBundle:Convert:base64 }
+#
+#api_serialized_convert:
+#    path: /convert/serialized
+#    defaults: { _controller: ApiBundle:Convert:serialized }
 
 api_responsive:
     path: /responsive
@@ -28,7 +28,7 @@ api_responsive:
 
 api_markdown:
     path: /markdown-parser
-    defaults: { _controller: ApiBundle:Convert:markdown }
+    defaults: { _controller: ApiBundle:Markdown:index }
 
 api_download:
     path: /download

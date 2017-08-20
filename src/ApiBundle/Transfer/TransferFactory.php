@@ -9,7 +9,7 @@ class TransferFactory
      *
      * @return ApiFormTransfer
      */
-    public static function createApiForm($type)
+    public function createApiForm($type)
     {
         $form = new ApiFormTransfer();
         $form->setType($type);
@@ -20,7 +20,7 @@ class TransferFactory
     /**
      * @return ResultTransfer
      */
-    public static function crateResult()
+    public function createResult()
     {
         return new ResultTransfer();
     }

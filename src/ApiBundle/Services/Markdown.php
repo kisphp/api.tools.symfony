@@ -1,13 +1,10 @@
 <?php
 
-namespace ApiBundle\Transformer;
+namespace ApiBundle\Services;
 
-use ApiBundle\Business\DecoderInterface;
-use ApiBundle\Business\TransformerInterface;
 use ApiBundle\Markdown\ApiMarkdownFactory;
-use Kisphp\Markdown;
 
-class MarkdownTransformer implements TransformerInterface
+class Markdown
 {
     /**
      * @var Markdown
@@ -20,14 +17,12 @@ class MarkdownTransformer implements TransformerInterface
     }
 
     /**
-     * @param DecoderInterface $decoder
+     * @param string $data
      *
      * @return string
      */
-    public function transform(DecoderInterface $decoder)
+    public function transform($data)
     {
-        $data = $decoder->getData();
-
         if (is_array($data)) {
             $data = implode("\n", $data);
         }

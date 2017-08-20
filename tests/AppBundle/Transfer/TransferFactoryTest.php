@@ -17,7 +17,7 @@ class TransferFactoryTest extends TestCase
 
     public function testCreateResultTransfer()
     {
-        $transfer = TransferFactory::crateResult();
+        $transfer = TransferFactory::createResult();
 
         self::assertContains('ResultTransfer', get_class($transfer));
     }
