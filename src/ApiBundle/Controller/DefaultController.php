@@ -35,9 +35,11 @@ class DefaultController extends Controller
             /** @var ApiFormTransfer $data */
             $data = $form->getData();
 
-            $decoder = Factory::createDecoder($data->getFromDecoder());
+            $factory = $this->get('api.factory');
 
-            $response = Factory::createResponse($decoder->transform($data), $data->getToTransformer());
+            $decoder = $factory->createDecoder($data->getFromDecoder());
+
+            $response = $factory->createResponse($decoder->transform($data), $data->getToTransformer());
 
             $result->setResult($response);
         }
@@ -64,12 +66,12 @@ class DefaultController extends Controller
             $manager = new TextDecoder();
             $manager->transform($form->getData());
 
-            $response = FactoryTransformer::createResponse($form->getData(), $manager);
+            $response = $this->get('api.factory')->createResponse($form->getData(), $manager);
 
             $result->setResult($response);
         }
 
-        return $this->render(self::TEMPLATE_CONVERTOR, [
+        return $this->render('ApiBundle::form.html.twig', [
             'form' => $form->createView(),
             'result' => $result->getResult(),
             'page_title' => 'Serialized',

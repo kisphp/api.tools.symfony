@@ -6,3 +6,6 @@ services:
       - { name: twig.extension }
   api.transfer_factory:
     class: ApiBundle\Transfer\TransferFactory
+
+  api.factory:
+    class: ApiBundle\Services\Factory

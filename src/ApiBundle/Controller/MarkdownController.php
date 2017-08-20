@@ -21,8 +21,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MarkdownController extends Controller
 {
-    const TEMPLATE_CONVERTOR = 'ApiBundle::form.html.twig';
-
     /**
      * @param Request $request
      *

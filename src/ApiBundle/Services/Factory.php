@@ -1,8 +1,11 @@
 <?php
 
-namespace ApiBundle\Business;
+namespace ApiBundle\Services;
 
-abstract class Factory
+use ApiBundle\Business\DecoderInterface;
+use ApiBundle\Business\TransformerInterface;
+
+class Factory
 {
     /**
      * @param DecoderInterface $decoder
@@ -10,7 +13,7 @@ abstract class Factory
      *
      * @return string|TransformerInterface
      */
-    public static function createResponse(DecoderInterface $decoder, $transformerName)
+    public function createResponse(DecoderInterface $decoder, $transformerName)
     {
         $transformerNamespace = '\\ApiBundle\\Transformer\\' . $transformerName . 'Transformer';
 
@@ -29,7 +32,7 @@ abstract class Factory
      *
      * @return string|DecoderInterface
      */
-    public static function createDecoder($decoderName)
+    public function createDecoder($decoderName)
     {
         $decoderNamespace = '\\ApiBundle\\Decoder\\' . $decoderName . 'Decoder';
 

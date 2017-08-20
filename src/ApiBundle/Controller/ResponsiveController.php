@@ -16,7 +16,7 @@ class ResponsiveController extends Controller
     /**
      * @param Request $request
      *
-     * @return array
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(Request $request)
     {
