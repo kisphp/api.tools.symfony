@@ -33,3 +33,7 @@ api_markdown:
 api_download:
     path: /download
     defaults: { _controller: ApiBundle:Default:download }
+
+api_generator:
+    path: /generate-data
+    defaults: { _controller: ApiBundle:Generator:index }
