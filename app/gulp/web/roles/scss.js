@@ -1,24 +1,26 @@
 let gulp = require('gulp');
-let p = require('gulp-load-plugins')();
+let plumber = require('gulp-plumber');
+let sass = require('gulp-scss');
+let concat = require('gulp-concat');
 
 let config = require('../config');
 
 gulp.task('css-external', function(){
     return gulp.src([
-        config.bowerDir + 'bootstrap/dist/css/bootstrap.min.css',
-        config.bowerDir + 'sweetalert/dist/sweetalert.css'
+        config.plugins + 'bootstrap/dist/css/bootstrap.min.css',
+        config.plugins + 'sweetalert/dist/sweetalert.css'
     ])
-        .pipe(p.plumber())
-        .pipe(p.sass())
-        .pipe(p.concat('external.css'))
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(concat('external.css'))
         .pipe(gulp.dest(config.targetDir + 'css'));
 });
 
 gulp.task('scss', ['css-external'], function(){
     return gulp.src(config.sourceDir + 'scss/index.scss')
-        .pipe(p.plumber())
-        .pipe(p.sass())
-        .pipe(p.concat('bundle.css'))
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(concat('bundle.css'))
         .pipe(gulp.dest(config.targetDir + 'css/'));
 });
 
@@ -28,5 +30,6 @@ gulp.task('watch:scss', function(){
 
 let GR = require('kisphp-gulp-commander');
 
+GR.addTask('css-external');
 GR.addTask('scss');
 GR.addWatch('watch:scss');

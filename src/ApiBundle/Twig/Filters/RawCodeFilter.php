@@ -12,15 +12,15 @@ class RawCodeFilter extends AbstractTwigFilter
     /**
      * @return string
      */
-    protected function getFilterName()
+    protected function getExtensionName()
     {
         return 'raw_code';
     }
 
     /**
-     * @return \Closure
+     * @return callable|\Closure
      */
-    protected function getFilter()
+    protected function getExtensionCallback()
     {
         return function ($code) {
             return htmlentities(stripslashes($code), ENT_QUOTES, 'UTF-8');
