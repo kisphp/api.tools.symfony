@@ -1,0 +1,27 @@
+{
+  "name": "kisphp_api_tools",
+  "version": "1.0.0",
+  "description": "Kisphp API Tools",
+  "main": "index.js",
+  "scripts": {
+    "_setup": "bower install",
+    "setup": "echo 'done'",
+    "web": "gulp --gulpfile app/gulp/web/gulpfile.js --cwd .",
+    "postinstall": "npm run setup && npm run web"
+  },
+  "author": "Bogdan Rizac",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-comments": "^2.5.2",
+    "kisphp-gulp-commander": "^0.2.1",
+    "require-dir": "^0.3.1"
+  }
+}

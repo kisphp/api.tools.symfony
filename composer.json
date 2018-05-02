@@ -23,7 +23,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0",
-        "symfony/symfony": "3.4.x-dev",
+        "symfony/symfony": "~3.4",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.3",
         "symfony/swiftmailer-bundle": "~3.0",
@@ -31,10 +31,10 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.1",
         "kisphp/markdown-parser": "~0.1|~1.0",
-        "kisphp/tools": "dev-future-versions",
+        "kisphp/tools": "~2.1",
         "sllh/composer-versions-check": "^2.0",
-        "twig/twig": "2.4.2",
-        "kisphp/twig-extensions": "dev-master"
+        "twig/twig": "~2.4",
+        "kisphp/twig-extensions": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.1",
@@ -63,9 +63,6 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "3.4-dev"
         }
     }
 }

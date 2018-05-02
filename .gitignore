@@ -31,3 +31,5 @@ tests/coverage/
 downloads/
 _sym3.4/
 _demo/
+.gulp-scss-cache
+.sass-cache

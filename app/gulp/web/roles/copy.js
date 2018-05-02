@@ -3,8 +3,8 @@ let config = require('../config');
 
 gulp.task('copy-fonts', () => {
     gulp.src([
-        config.bowerDir + 'fontawesome/fonts/**/*.*',
-        config.bowerDir + 'bootstrap/dist/fonts/**/*.*'
+        config.plugins + 'fontawesome/fonts/**/*.*',
+        config.plugins + 'bootstrap/dist/fonts/**/*.*'
     ], [{ base: 'bower/' }])
         .pipe(gulp.dest('web/fonts'))
     ;
