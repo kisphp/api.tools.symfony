@@ -4,6 +4,7 @@ php:
 before_script:
   - travis_retry composer self-update
 install:
+  - composer install -n -o -a
   - ./build.sh dev --no-frontend
 script:
   - phpunit --coverage-clover=coverage.xml
