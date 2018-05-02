@@ -4,8 +4,11 @@ services:
     public: false
     tags:
       - { name: twig.extension }
+
   api.transfer_factory:
+    public: true
     class: ApiBundle\Transfer\TransferFactory
 
   api.factory:
+    public: true
     class: ApiBundle\Services\Factory
