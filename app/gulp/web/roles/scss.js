@@ -11,7 +11,6 @@ gulp.task('css-external', function(){
         config.plugins + 'sweetalert/dist/sweetalert.css'
     ])
         .pipe(plumber())
-        .pipe(sass())
         .pipe(concat('external.css'))
         .pipe(gulp.dest(config.targetDir + 'css'));
 });
