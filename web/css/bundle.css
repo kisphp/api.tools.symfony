@@ -1,0 +1,47 @@
+.form-inline .radio,
+.form-inline .checkbox {
+  padding-right: 10px;
+  float: left; }
+
+.iframe-topic {
+  font-weight: 700;
+  height: 25px;
+  background: #3c3c3c;
+  color: #fff;
+  padding-left: 10px;
+  line-height: 25px; }
+
+.refresh-iframe {
+  font-weight: 400;
+  padding-right: 5px;
+  color: #cfcfcf; }
+  .refresh-iframe:focus, .refresh-iframe:hover {
+    color: #fff; }
+
+.navbar-default {
+  background: #2c2c2c;
+  border-top: 5px solid orangered; }
+  .navbar-default .navbar-brand {
+    color: #ccc; }
+    .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+      color: #eee; }
+  .navbar-default .navbar-nav > li > a {
+    color: #bbb; }
+
+body {
+  background: url(/bundles/api/images/grid.png) top left repeat-x; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: #555;
+  color: #ccc; }
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #eee; }
+
+blockquote {
+  border-left: 5px solid lightsalmon;
+  background: lightyellow; }
