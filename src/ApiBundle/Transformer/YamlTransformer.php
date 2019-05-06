@@ -8,7 +8,8 @@ use Symfony\Component\Yaml\Yaml;
 
 class YamlTransformer implements TransformerInterface
 {
-    const YAML_INLINE_LEVEL = 5;
+    const YAML_INLINE_LEVEL = 15;
+    CONST YAML_INDENTATION_SPACES = 2;
 
     /**
      * @param DecoderInterface $decoder
@@ -17,6 +18,6 @@ class YamlTransformer implements TransformerInterface
      */
     public function transform(DecoderInterface $decoder)
     {
-        return Yaml::dump($decoder->getData(), self::YAML_INLINE_LEVEL);
+        return Yaml::dump($decoder->getData(), static::YAML_INLINE_LEVEL, static::YAML_INDENTATION_SPACES);
     }
 }

@@ -32,7 +32,6 @@
         "incenteev/composer-parameter-handler": "~2.1",
         "kisphp/markdown-parser": "~0.1|~1.0",
         "kisphp/tools": "~2.1",
-        "sllh/composer-versions-check": "^2.0",
         "twig/twig": "~2.4",
         "kisphp/twig-extensions": "~1.0"
     },
